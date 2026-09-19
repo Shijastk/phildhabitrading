@@ -1,25 +1,31 @@
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SiteFooter } from '@/components/layout/SiteFooter';
-import { Hero } from '@/components/sections/Hero';
-import { EditorialStatement } from '@/components/sections/EditorialStatement';
-import { EditorialCategories } from '@/components/sections/EditorialCategories';
-import { EditorialPortfolio } from '@/components/sections/EditorialPortfolio';
-import { EditorialProcess } from '@/components/sections/EditorialProcess';
-import { EditorialProof } from '@/components/sections/EditorialProof';
-import { Contact } from '@/components/sections/Contact';
+import { CommerceHero } from '@/components/sections/CommerceHero';
+import { CategoryStrip } from '@/components/sections/CategoryStrip';
+import { ValuesBand } from '@/components/sections/ValuesBand';
+import { CollectionsGrid } from '@/components/sections/CollectionsGrid';
+import { FeaturedProducts } from '@/components/sections/FeaturedProducts';
+import { TradeBenefits } from '@/components/sections/TradeBenefits';
+import { CompanyBand } from '@/components/sections/CompanyBand';
+import { SupplySteps } from '@/components/sections/SupplySteps';
+import { FAQSection } from '@/components/sections/FAQSection';
+import { TradeContact } from '@/components/sections/TradeContact';
 
 export default function HomePage() {
   return (
     <>
       <SiteHeader />
       <main>
-        <Hero />
-        <EditorialStatement />
-        <EditorialCategories />
-        <EditorialPortfolio />
-        <EditorialProcess />
-        <EditorialProof />
-        <Contact />
+        <CommerceHero />
+        <CategoryStrip />
+        <ValuesBand />
+        <CollectionsGrid />
+        <FeaturedProducts />
+        <TradeBenefits />
+        <CompanyBand />
+        <SupplySteps />
+        <FAQSection />
+        <TradeContact />
       </main>
       <SiteFooter />
     </>

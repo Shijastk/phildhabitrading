@@ -1,0 +1,298 @@
+@media (max-width: 1050px) {
+  .siteNav {
+    display: none;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .siteNav--open {
+    position: absolute;
+    top: 76px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 21px;
+    border: 1px solid var(--line);
+    background: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .commerceHero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commerceHero__copy {
+    padding: 66px 0 48px;
+  }
+
+  .commerceHero__media {
+    min-height: 450px;
+  }
+
+  .categoryStrip__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .valuesBand__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 42px 26px;
+  }
+
+  .collectionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tradeBenefits__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tradeBenefits article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .tradeBenefits article:nth-child(-n+2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .companyBand__grid,
+  .faqSection__grid,
+  .contactSection__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .supplyGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footerMain {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .footerGroup:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 15px;
+  }
+
+  .siteShell {
+    width: min(100% - 28px, 1240px);
+  }
+
+  .noticeBar__inner {
+    min-height: 32px;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 9px;
+  }
+
+  .siteHeader__inner {
+    min-height: 66px;
+  }
+
+  .siteBrand strong {
+    font-size: 17px;
+  }
+
+  .siteBrand small {
+    font-size: 7px;
+  }
+
+  .headerButton {
+    display: none;
+  }
+
+  .siteNav--open {
+    top: 66px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .commerceHero h1 {
+    font-size: clamp(40px, 12vw, 55px);
+  }
+
+  .commerceHero__copy {
+    padding: 52px 0 40px;
+  }
+
+  .commerceHero__copy > p:not(.eyebrow) {
+    font-size: 14px;
+  }
+
+  .heroButtons {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .primaryButton,
+  .textButton {
+    width: 100%;
+  }
+
+  .commerceHero__media {
+    min-height: 340px;
+    margin-inline: -14px;
+  }
+
+  .sectionTopline,
+  .sectionHeadingRow {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .sectionTopline h2,
+  .sectionHeadingRow h2 {
+    font-size: 32px;
+  }
+
+  .categoryStrip {
+    padding: 42px 0 46px;
+  }
+
+  .categoryStrip__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categoryItem {
+    min-height: 112px;
+  }
+
+  .valuesBand {
+    padding: 62px 0 65px;
+  }
+
+  .valuesBand__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .valueItem {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.16);
+  }
+
+  .collectionsSection,
+  .featuredSection,
+  .companyBand,
+  .supplySection,
+  .faqSection,
+  .contactSection {
+    padding: 64px 0;
+  }
+
+  .collectionCard {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .collectionCard__copy {
+    padding: 31px 25px 27px;
+  }
+
+  .collectionCard h3 {
+    font-size: 32px;
+  }
+
+  .collectionCard__media {
+    min-height: 285px;
+  }
+
+  .collectionCard__media::after {
+    background: linear-gradient(180deg, currentColor 0%, transparent 28%);
+  }
+
+  .featuredGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .productTile__media {
+    height: 300px;
+  }
+
+  .tradeBenefits__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tradeBenefits article,
+  .tradeBenefits article:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .companyBand__media {
+    min-height: 330px;
+  }
+
+  .companyBand__copy h2,
+  .faqSection h2,
+  .contactCopy h2 {
+    font-size: 36px;
+  }
+
+  .companyStats {
+    grid-template-columns: 1fr;
+  }
+
+  .companyStats div,
+  .companyStats div:not(:first-child) {
+    padding: 13px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .supplyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .supplyGrid article {
+    min-height: 170px;
+  }
+
+  .faqSection__grid {
+    gap: 30px;
+  }
+
+  .contactForm {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .contactForm__wide,
+  .contactForm button {
+    grid-column: auto;
+  }
+
+  .footerMain {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 22px;
+  }
+
+  .footerMain > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footerGroup:last-child {
+    grid-column: auto;
+  }
+
+  .footerBottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
