@@ -1,0 +1,364 @@
+/* Exact category-section treatment based on the supplied reference. */
+.categoryReferenceSection {
+  position: relative;
+  overflow: hidden;
+  padding: 58px 0 72px;
+  background:
+    radial-gradient(ellipse at -4% 77%, rgba(248, 201, 217, 0.28) 0 7%, transparent 17%),
+    radial-gradient(ellipse at 103% 18%, rgba(251, 222, 193, 0.25) 0 8%, transparent 18%),
+    #fff;
+}
+
+.categoryReferenceSection::before,
+.categoryReferenceSection::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.42;
+  filter: blur(1px);
+}
+
+.categoryReferenceSection::before {
+  left: -42px;
+  bottom: 10px;
+  width: 180px;
+  height: 180px;
+  border-radius: 58% 42% 65% 35%;
+  background:
+    radial-gradient(circle at 67% 45%, rgba(248, 177, 203, 0.28) 0 20%, transparent 21%),
+    radial-gradient(circle at 36% 68%, rgba(247, 185, 207, 0.2) 0 24%, transparent 25%);
+  transform: rotate(-24deg);
+}
+
+.categoryReferenceSection::after {
+  right: -26px;
+  top: 68px;
+  width: 165px;
+  height: 150px;
+  border-radius: 48% 52% 42% 58%;
+  background:
+    radial-gradient(circle at 34% 40%, rgba(247, 207, 166, 0.26) 0 22%, transparent 23%),
+    radial-gradient(circle at 66% 62%, rgba(250, 214, 177, 0.2) 0 26%, transparent 27%);
+  transform: rotate(23deg);
+}
+
+.categoryReferenceSection > .shell {
+  position: relative;
+  z-index: 2;
+  width: min(1240px, calc(100% - 44px));
+}
+
+.categoryReferenceHeading {
+  max-width: 820px;
+  margin: 0 auto 31px;
+  text-align: center;
+}
+
+.categoryReferenceHeading .sectionEyebrow {
+  margin-bottom: 11px;
+  color: #536887;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+}
+
+.categoryReferenceHeading h2 {
+  margin: 0;
+  color: #0b2d5e;
+  font-size: clamp(34px, 3vw, 45px);
+  font-weight: 600;
+  line-height: 1.02;
+}
+
+.categoryReferenceHeading > p:last-child {
+  margin: 11px auto 0;
+  color: #677991;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.categoryReferenceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.categoryReferenceCard {
+  min-height: 0;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #e2e9f1;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(52, 91, 137, 0.08);
+}
+
+.categoryReferenceCard--beauty {
+  border-color: #f0dfe6;
+  background: #fff1f5;
+}
+
+.categoryReferenceCard--food {
+  border-color: #f0e1cf;
+  background: #fff4e7;
+}
+
+.categoryReferenceMain {
+  min-height: 282px;
+  display: grid;
+  grid-template-columns: 49.5% 50.5%;
+}
+
+.categoryReferenceCopy {
+  position: relative;
+  z-index: 3;
+  min-width: 0;
+  padding: 29px 14px 22px 31px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.categoryReferenceCard--beauty .categoryReferenceCopy {
+  background: linear-gradient(90deg, #fff1f5 0%, #fff1f5 82%, rgba(255, 241, 245, 0.92) 100%);
+}
+
+.categoryReferenceCard--food .categoryReferenceCopy {
+  background: linear-gradient(90deg, #fff4e7 0%, #fff4e7 82%, rgba(255, 244, 231, 0.92) 100%);
+}
+
+.categoryReferenceCopy > span {
+  color: #68758d;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.categoryReferenceCopy h3 {
+  max-width: 250px;
+  margin: 15px 0 11px;
+  color: #0b2d5e;
+  font-size: clamp(37px, 3.45vw, 48px);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.categoryReferenceCopy > p {
+  max-width: 265px;
+  margin: 0;
+  color: #5e7189;
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.categoryReferenceCopy > a {
+  min-height: 42px;
+  margin-top: 20px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 800;
+  box-shadow: 0 8px 18px rgba(18, 91, 176, 0.14);
+}
+
+.categoryReferenceCard--beauty .categoryReferenceCopy > a {
+  background: #0d63c7;
+}
+
+.categoryReferenceCard--food .categoryReferenceCopy > a {
+  background: #d78c34;
+  box-shadow: 0 8px 18px rgba(196, 124, 41, 0.15);
+}
+
+.categoryReferenceImage {
+  position: relative;
+  min-height: 282px;
+  overflow: hidden;
+}
+
+.categoryReferenceImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.04);
+}
+
+.categoryReferenceImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.categoryReferenceCard--beauty .categoryReferenceImage::after {
+  background:
+    linear-gradient(90deg, #fff1f5 0%, rgba(255, 241, 245, 0.63) 12%, rgba(255, 241, 245, 0) 35%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(253,236,244,0.1));
+}
+
+.categoryReferenceCard--food .categoryReferenceImage::after {
+  background:
+    linear-gradient(90deg, #fff4e7 0%, rgba(255, 244, 231, 0.62) 12%, rgba(255, 244, 231, 0) 35%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,239,220,0.09));
+}
+
+.categoryReferenceFooter {
+  position: static;
+  min-height: 57px;
+  margin: 0;
+  padding: 9px 21px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-top: 1px solid rgba(103, 124, 149, 0.1);
+}
+
+.categoryReferenceCard--beauty .categoryReferenceFooter {
+  background: rgba(252, 235, 242, 0.78);
+}
+
+.categoryReferenceCard--food .categoryReferenceFooter {
+  background: rgba(255, 239, 219, 0.82);
+}
+
+.categoryReferenceTag {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  border-right: 1px solid rgba(100, 120, 144, 0.13);
+  border-radius: 0;
+  color: #65768b;
+  background: transparent;
+  font-size: 9.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.categoryReferenceTag:last-child {
+  border-right: 0;
+}
+
+.categoryReferenceTag i {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(98, 119, 145, 0.2);
+  border-radius: 50%;
+  color: #77879a;
+  background: rgba(255,255,255,0.45);
+  font-size: 10px;
+  font-style: normal;
+}
+
+@media (min-width: 1450px) {
+  .categoryReferenceSection > .shell {
+    width: min(1420px, calc(100% - 70px));
+  }
+
+  .categoryReferenceMain,
+  .categoryReferenceImage {
+    min-height: 318px;
+  }
+
+  .categoryReferenceCopy {
+    padding: 34px 18px 24px 36px;
+  }
+
+  .categoryReferenceCopy h3 {
+    font-size: 50px;
+  }
+
+  .categoryReferenceCopy > p {
+    font-size: 14px;
+  }
+
+  .categoryReferenceFooter {
+    min-height: 62px;
+  }
+
+  .categoryReferenceTag {
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 920px) {
+  .categoryReferenceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryReferenceMain,
+  .categoryReferenceImage {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .categoryReferenceSection {
+    padding: 52px 0 58px;
+  }
+
+  .categoryReferenceHeading {
+    margin-bottom: 24px;
+  }
+
+  .categoryReferenceHeading h2 {
+    font-size: 34px;
+  }
+
+  .categoryReferenceMain {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .categoryReferenceCopy {
+    padding: 27px 23px 24px;
+  }
+
+  .categoryReferenceCopy h3 {
+    max-width: none;
+    font-size: 42px;
+  }
+
+  .categoryReferenceCopy > p {
+    max-width: 340px;
+  }
+
+  .categoryReferenceImage {
+    min-height: 245px;
+  }
+
+  .categoryReferenceCard--beauty .categoryReferenceImage::after,
+  .categoryReferenceCard--food .categoryReferenceImage::after {
+    background: linear-gradient(180deg, currentColor 0%, transparent 22%);
+    opacity: 0.08;
+  }
+
+  .categoryReferenceFooter {
+    min-height: 0;
+    padding: 12px 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 0;
+  }
+
+  .categoryReferenceTag {
+    min-height: 30px;
+    border-right: 0;
+    justify-content: flex-start;
+    padding: 0 7px;
+  }
+}

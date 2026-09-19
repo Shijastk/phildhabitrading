@@ -1,49 +1,98 @@
 import Image from 'next/image';
 import { ArrowIcon } from '@/components/ui/ArrowIcon';
+import beautyVisual from '@/public/category-beauty.webp';
+import foodVisual from '@/public/category-food.webp';
 
-const beautyImage =
-  'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1400&q=90';
-const foodImage =
-  'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=90';
+const beautyTags = [
+  ['◇', 'Skincare'],
+  ['⌇', 'Hair Care'],
+  ['◌', 'Personal Care'],
+  ['◇', 'Beauty Essentials'],
+];
+
+const foodTags = [
+  ['▢', 'Pantry Staples'],
+  ['▣', 'Beverages'],
+  ['◇', 'Spices & Herbs'],
+  ['▤', 'Packaged Foods'],
+];
 
 export function CategoryShowcase() {
   return (
-    <section className="categorySection section" id="categories">
+    <section className="categorySection categoryReferenceSection section" id="categories">
       <div className="shell">
-        <div className="categoryHeading">
+        <div className="categoryHeading categoryReferenceHeading">
           <p className="sectionEyebrow">OUR CATEGORIES</p>
-          <h2>Two essential worlds. One trusted partner.</h2>
-          <p>Beauty and everyday nourishment, brought together through one B2B trading relationship.</p>
+          <h2>Two Essential Worlds. One Trusted Partner.</h2>
+          <p>Quality products for a more beautiful and nourished tomorrow.</p>
         </div>
 
-        <div className="categoryGrid">
-          <article className="categoryPanel categoryPanel--beauty">
-            <div className="categoryPanel__copy">
-              <span>PREMIUM BEAUTY</span>
-              <h3>Cosmetics &amp; personal care</h3>
-              <p>Skincare, beauty, fragrance and personal care products for modern retail environments.</p>
-              <a href="#products">Explore cosmetics <ArrowIcon size={17} /></a>
-              <div className="categoryTags">
-                <span>Skincare</span><span>Hair care</span><span>Fragrance</span><span>Personal care</span>
+        <div className="categoryGrid categoryReferenceGrid">
+          <article className="categoryPanel categoryReferenceCard categoryReferenceCard--beauty">
+            <div className="categoryReferenceMain">
+              <div className="categoryPanel__copy categoryReferenceCopy">
+                <span>PREMIUM QUALITY</span>
+                <h3>Cosmetics</h3>
+                <p>Skincare, beauty and personal care products from trusted global brands.</p>
+
+                <a href="#products">
+                  Explore Cosmetics
+                  <ArrowIcon size={16} />
+                </a>
+              </div>
+
+              <div className="categoryPanel__image categoryReferenceImage">
+                <Image
+                  src={beautyVisual}
+                  alt="Premium cosmetics and personal care products"
+                  fill
+                  priority={false}
+                  sizes="(max-width: 760px) 100vw, 25vw"
+                />
               </div>
             </div>
-            <div className="categoryPanel__image">
-              <Image src={beautyImage} alt="Cosmetics and skincare products" fill sizes="(max-width: 800px) 90vw, 42vw" />
+
+            <div className="categoryTags categoryReferenceFooter">
+              {beautyTags.map(([icon, label]) => (
+                <span className="categoryReferenceTag" key={label}>
+                  <i aria-hidden="true">{icon}</i>
+                  {label}
+                </span>
+              ))}
             </div>
           </article>
 
-          <article className="categoryPanel categoryPanel--food">
-            <div className="categoryPanel__copy">
-              <span>NATURAL GOODNESS</span>
-              <h3>Food items &amp; FMCG</h3>
-              <p>Packaged foods, beverages, pantry staples and repeat-purchase FMCG essentials.</p>
-              <a href="#products">Explore food items <ArrowIcon size={17} /></a>
-              <div className="categoryTags">
-                <span>Rice &amp; grains</span><span>Beverages</span><span>Condiments</span><span>Daily essentials</span>
+          <article className="categoryPanel categoryReferenceCard categoryReferenceCard--food">
+            <div className="categoryReferenceMain">
+              <div className="categoryPanel__copy categoryReferenceCopy">
+                <span>NATURAL GOODNESS</span>
+                <h3>Food Items</h3>
+                <p>Quality groceries, packaged foods, spices and more for a healthier living.</p>
+
+                <a href="#products">
+                  Explore Food Items
+                  <ArrowIcon size={16} />
+                </a>
+              </div>
+
+              <div className="categoryPanel__image categoryReferenceImage">
+                <Image
+                  src={foodVisual}
+                  alt="Food items and FMCG essentials"
+                  fill
+                  priority={false}
+                  sizes="(max-width: 760px) 100vw, 25vw"
+                />
               </div>
             </div>
-            <div className="categoryPanel__image">
-              <Image src={foodImage} alt="Food and grocery products" fill sizes="(max-width: 800px) 90vw, 42vw" />
+
+            <div className="categoryTags categoryReferenceFooter">
+              {foodTags.map(([icon, label]) => (
+                <span className="categoryReferenceTag" key={label}>
+                  <i aria-hidden="true">{icon}</i>
+                  {label}
+                </span>
+              ))}
             </div>
           </article>
         </div>
