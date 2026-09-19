@@ -1,0 +1,366 @@
+@media (max-width: 1080px) {
+  .utilityBar__right {
+    display: none;
+  }
+
+  .primaryNav {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .primaryNav--open {
+    position: absolute;
+    top: 80px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 24px;
+    border: 1px solid #e7e2dd;
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 78px;
+  }
+
+  .hero__copy {
+    max-width: 820px;
+  }
+
+  .hero h1 {
+    font-size: clamp(55px, 7.7vw, 78px);
+  }
+
+  .heroVisual {
+    width: min(720px, 100%);
+    min-height: 500px;
+    margin-left: auto;
+  }
+
+  .capabilityGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .introGrid,
+  .distributionGrid,
+  .marketGrid,
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .introCopy {
+    max-width: 720px;
+  }
+
+  .distributionIntro {
+    max-width: 760px;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .marketVisual {
+    min-height: 520px;
+  }
+
+  .marketContent {
+    max-width: 800px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .statsIntro {
+    grid-column: 1 / -1;
+  }
+
+  .contactSection {
+    background: linear-gradient(180deg, #a61f45 0%, #a61f45 43%, #f1ece6 43%, #f1ece6 100%);
+  }
+
+  .contactIntro {
+    max-width: 740px;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .footerColumn:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
+  }
+
+  .shell {
+    width: min(100% - 30px, 1200px);
+  }
+
+  .section {
+    padding: 82px 0;
+  }
+
+  .utilityBar__inner {
+    min-height: 35px;
+    justify-content: center;
+    font-size: 12.5px;
+  }
+
+  .navBar__inner {
+    min-height: 70px;
+  }
+
+  .brand__copy strong {
+    font-size: 15px;
+  }
+
+  .brand__copy small {
+    font-size: 9px;
+  }
+
+  .headerCta {
+    display: none;
+  }
+
+  .primaryNav--open {
+    top: 70px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .hero,
+  .hero__grid {
+    min-height: auto;
+  }
+
+  .hero__grid {
+    padding-top: 72px;
+    padding-bottom: 88px;
+  }
+
+  .hero__eyebrow,
+  .sectionEyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.11em;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 13vw, 60px);
+    line-height: 1;
+  }
+
+  .hero h1 span {
+    white-space: normal;
+  }
+
+  .hero__lead {
+    font-size: 16.5px;
+    line-height: 1.7;
+  }
+
+  .hero__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions .button {
+    width: 100%;
+  }
+
+  .hero__proof {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hero__proof div {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .heroVisual {
+    min-height: 390px;
+  }
+
+  .heroVisual__main {
+    inset: 0 20px 40px 35px;
+    border-radius: 24px 12px 24px 24px;
+  }
+
+  .heroVisual__secondary {
+    width: 52%;
+    height: 155px;
+    border-width: 5px;
+  }
+
+  .heroVisual__note {
+    top: 18px;
+    width: 130px;
+    padding: 13px;
+    font-size: 11.5px;
+  }
+
+  .capabilitySection {
+    margin-top: -38px;
+  }
+
+  .capabilityGrid,
+  .categoryGrid,
+  .benefitGrid,
+  .productGrid,
+  .processGrid,
+  .formGrid,
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .capabilityCard {
+    min-height: auto;
+  }
+
+  .introSection {
+    padding-top: 96px;
+  }
+
+  .sectionHeading h2 {
+    font-size: clamp(36px, 10vw, 47px);
+  }
+
+  .sectionHeading__copy,
+  .introCopy {
+    font-size: 16px;
+  }
+
+  .categoryCard__media {
+    height: 285px;
+  }
+
+  .categoryCard__body {
+    padding: 25px;
+  }
+
+  .categoryCard h3 {
+    font-size: 32px;
+  }
+
+  .benefitCard {
+    min-height: auto;
+  }
+
+  .filterBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filterButton {
+    padding: 0 10px;
+  }
+
+  .productCard__media {
+    height: 255px;
+  }
+
+  .processCard {
+    min-height: auto;
+  }
+
+  .marketVisual {
+    min-height: 430px;
+  }
+
+  .marketVisual__main {
+    inset: 0 10px 0 0;
+  }
+
+  .marketVisual__badge {
+    right: 0;
+    bottom: 20px;
+    min-width: 185px;
+    padding: 18px;
+  }
+
+  .statsIntro {
+    grid-column: auto;
+  }
+
+  .statItem {
+    min-height: auto;
+    padding: 20px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    border-left: 0;
+  }
+
+  .contactSection {
+    background: linear-gradient(180deg, #a61f45 0%, #a61f45 39%, #f1ece6 39%, #f1ece6 100%);
+  }
+
+  .contactIntro h2 {
+    font-size: 40px;
+  }
+
+  .contactDetails > * {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .enquiryForm {
+    padding: 24px;
+    border-radius: 18px 10px 18px 18px;
+  }
+
+  .enquiryForm__heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .enquiryForm__heading > span {
+    max-width: none;
+    text-align: left;
+  }
+
+  .formGrid__full {
+    grid-column: auto;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 24px;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1;
+  }
+
+  .footerColumn:last-child {
+    grid-column: auto;
+  }
+
+  .footerBottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,154 @@
+/* Header */
+.siteHeader {
+  position: relative;
+  z-index: 50;
+}
+
+.utilityBar {
+  color: #dfe8ef;
+  background: var(--navy-deep);
+}
+
+.utilityBar__inner {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 13px;
+}
+
+.utilityBar__divider {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--rose);
+}
+
+.utilityBar__right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: #aebfcd;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.navBar {
+  position: relative;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid rgba(16, 42, 67, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.navBar__inner {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.brand__mark {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px 9px 16px 9px;
+  color: var(--white);
+  background: var(--berry);
+  font-family: var(--font-display), sans-serif;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.brand__copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand__copy strong {
+  font-family: var(--font-display), sans-serif;
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+}
+
+.brand__copy small {
+  margin-top: 6px;
+  color: #6c7b88;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.primaryNav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.primaryNav a {
+  position: relative;
+  color: #31475b;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.primaryNav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--berry);
+  transition: width 180ms ease;
+}
+
+.primaryNav a:hover::after {
+  width: 100%;
+}
+
+.headerCta {
+  min-height: 45px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 17px;
+  border-radius: 9px;
+  color: var(--white);
+  background: var(--navy);
+  font-family: var(--font-display), sans-serif;
+  font-size: 13.5px;
+  font-weight: 650;
+}
+
+.menuButton {
+  display: none;
+  margin-left: auto;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menuButton span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin: 5px 0;
+  border-radius: 2px;
+  background: var(--navy);
+}

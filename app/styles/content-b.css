@@ -1,0 +1,160 @@
+/* Distribution */
+.distributionSection {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-deep);
+}
+
+.distributionSection__glow {
+  position: absolute;
+  width: 470px;
+  height: 470px;
+  right: -160px;
+  top: -180px;
+  border-radius: 50%;
+  background: rgba(183, 36, 75, 0.14);
+  filter: blur(4px);
+}
+
+.distributionGrid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 82px;
+  align-items: start;
+}
+
+.distributionIntro .button {
+  margin-top: 31px;
+}
+
+.benefitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.benefitCard {
+  min-height: 210px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.benefitCard span {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(231, 164, 179, 0.45);
+  border-radius: 10px;
+  color: #f0bdca;
+  font-family: var(--font-display), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.benefitCard h3 {
+  margin: 21px 0 8px;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.18;
+}
+
+.benefitCard p {
+  margin: 0;
+  color: #afc0cd;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+/* Products */
+.productSection__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterBar {
+  margin-top: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.filterButton {
+  min-height: 44px;
+  padding: 0 17px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: #53616d;
+  background: var(--white);
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.filterButton:hover,
+.filterButton--active {
+  color: var(--white);
+  border-color: var(--navy);
+  background: var(--navy);
+}
+
+.productGrid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.productCard {
+  overflow: hidden;
+  border: 1px solid #ebe5df;
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 0 8px 28px rgba(16, 42, 67, 0.05);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.productCard__media {
+  position: relative;
+  height: 245px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.productCard__body {
+  padding: 24px 24px 27px;
+}
+
+.productCard__body > p {
+  margin: 0;
+  color: var(--berry);
+  font-family: var(--font-display), sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.productCard h3 {
+  margin: 9px 0 10px;
+  color: var(--navy-deep);
+  font-size: 22px;
+  font-weight: 650;
+}
+
+.productCard__body > span {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.65;
+}

@@ -1,0 +1,67 @@
+'use client';
+
+import { useState } from 'react';
+import { company, navItems } from '@/data/site';
+import { ArrowIcon } from '@/components/ui/ArrowIcon';
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  const whatsapp = `https://wa.me/${company.phoneHref.replace('+', '')}?text=${encodeURIComponent(
+    'Hello Phildhabi General Trading, I would like to make a trade enquiry.'
+  )}`;
+
+  return (
+    <header className="siteHeader">
+      <div className="utilityBar">
+        <div className="shell utilityBar__inner">
+          <span>{company.coverage}</span>
+          <span className="utilityBar__divider" aria-hidden="true" />
+          <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
+          <div className="utilityBar__right" aria-label="Services">
+            <span>Wholesale supply</span>
+            <span>General trading</span>
+            <span>FMCG distribution</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="navBar">
+        <div className="shell navBar__inner">
+          <a className="brand" href="#top" aria-label="Phildhabi General Trading home">
+            <span className="brand__mark">P</span>
+            <span className="brand__copy">
+              <strong>PHILDHABI</strong>
+              <small>GENERAL TRADING</small>
+            </span>
+          </a>
+
+          <button
+            className="menuButton"
+            type="button"
+            aria-expanded={open}
+            aria-controls="primary-navigation"
+            aria-label={open ? 'Close navigation' : 'Open navigation'}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav id="primary-navigation" className={`primaryNav ${open ? 'primaryNav--open' : ''}`}>
+            {navItems.map((item) => (
+              <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <a className="headerCta" href={whatsapp} target="_blank" rel="noreferrer">
+            Trade enquiry
+            <ArrowIcon size={17} />
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
