@@ -1,82 +1,42 @@
-/* Multi-direction premium reveal system */
+/* Lightweight reveal system tuned for smooth scrolling */
 
 .motion-ready .reveal-target {
   opacity: 0;
-  filter: blur(0);
-  transform-origin: center;
   transition:
-    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
-    translate 760ms cubic-bezier(0.22, 1, 0.36, 1),
-    scale 780ms cubic-bezier(0.22, 1, 0.36, 1),
-    rotate 780ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    translate 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 520ms cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, translate, scale, rotate, filter;
 }
 
 .motion-ready .reveal-rise {
-  translate: 0 24px;
+  translate: 0 16px;
 }
 
 .motion-ready .reveal-fade {
-  translate: 0 5px;
-}
-
-.motion-ready .reveal-scale {
-  scale: 0.975;
-  translate: 0 10px;
+  translate: 0 3px;
 }
 
 .motion-ready .reveal-slide-left {
-  translate: -42px 0;
+  translate: -26px 0;
 }
 
 .motion-ready .reveal-slide-right {
-  translate: 42px 0;
+  translate: 26px 0;
 }
 
-.motion-ready .reveal-blur-up {
-  translate: 0 18px;
-  filter: blur(10px);
-}
-
-.motion-ready .reveal-blur-left {
-  translate: -28px 0;
-  filter: blur(9px);
-}
-
-.motion-ready .reveal-blur-right {
-  translate: 28px 0;
-  filter: blur(9px);
-}
-
-.motion-ready .reveal-zoom {
-  scale: 0.94;
+.motion-ready .reveal-heading {
+  translate: 0 12px;
   filter: blur(3px);
-}
-
-.motion-ready .reveal-tilt-left {
-  translate: -18px 14px;
-  rotate: -1.6deg;
-  scale: 0.985;
-}
-
-.motion-ready .reveal-tilt-right {
-  translate: 18px 14px;
-  rotate: 1.6deg;
-  scale: 0.985;
 }
 
 .motion-ready .reveal-target.is-visible {
   opacity: 1;
   translate: 0 0;
-  scale: 1;
-  rotate: 0deg;
   filter: blur(0);
-  will-change: auto;
 }
 
-/* Header: normal in document flow -> hides upward -> returns as a floating bar. */
+/* Header returns cleanly without expensive fixed backdrop-filter repainting. */
 .siteHeaderSlot {
   position: relative;
   min-height: 80px;
@@ -90,9 +50,9 @@
   z-index: 80;
   transform: translateY(0);
   transition:
-    transform 185ms cubic-bezier(0.4, 0, 1, 1),
-    box-shadow 220ms ease,
-    background-color 220ms ease;
+    transform 170ms cubic-bezier(0.4, 0, 1, 1),
+    box-shadow 180ms ease,
+    background-color 180ms ease;
 }
 
 .siteHeader--normal {
@@ -113,10 +73,9 @@
   left: 0;
   right: 0;
   transform: translateY(0);
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 11px 36px rgba(8, 40, 68, 0.105);
-  backdrop-filter: blur(14px);
-  animation: headerReturn 310ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  background: rgba(255, 255, 255, 0.99);
+  box-shadow: 0 9px 28px rgba(8, 40, 68, 0.09);
+  animation: headerReturn 250ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .siteHeader--floating .siteHeader__inner {
@@ -125,8 +84,8 @@
 
 @keyframes headerReturn {
   from {
-    transform: translateY(-115%);
-    opacity: 0.35;
+    transform: translateY(-105%);
+    opacity: 0.75;
   }
   to {
     transform: translateY(0);
@@ -134,7 +93,7 @@
   }
 }
 
-/* Micro interactions */
+/* Keep hover motion subtle and composited. */
 .primaryButton,
 .headerButton,
 .textButton,
@@ -146,55 +105,32 @@
 .faqList details,
 .contactForm button {
   transition:
-    transform 180ms ease,
-    background-color 180ms ease,
-    color 180ms ease,
-    box-shadow 220ms ease;
+    transform 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 180ms ease;
 }
 
 .categoryItem:hover,
 .tradeBenefits article:hover,
-.supplyGrid article:hover {
-  transform: translateY(-3px);
-}
-
+.supplyGrid article:hover,
 .collectionCard:hover,
 .productTile:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 42px rgba(8, 40, 68, 0.075);
+  transform: translateY(-2px);
 }
 
 .collectionCard__media img,
-.productTile__media img,
-.companyBand__media img,
-.commerceHero__media img {
-  transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+.productTile__media img {
+  transition: transform 360ms ease;
 }
 
 .collectionCard:hover .collectionCard__media img,
 .productTile:hover .productTile__media img {
-  transform: scale(1.025);
-}
-
-.faqList details {
-  transition:
-    background-color 180ms ease,
-    box-shadow 220ms ease;
-}
-
-.faqList details[open] {
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 8px 24px rgba(8, 40, 68, 0.04);
+  transform: scale(1.015);
 }
 
 .faqList summary span {
-  transition: transform 180ms ease;
-}
-
-@media (max-width: 1050px) {
-  .siteHeader--floating .siteNav--open {
-    top: 70px;
-  }
+  transition: transform 160ms ease;
 }
 
 @media (max-width: 720px) {
@@ -206,41 +142,21 @@
     min-height: 62px;
   }
 
-  .motion-ready .reveal-target {
-    transition-duration: 500ms, 590ms, 610ms, 610ms, 570ms;
-  }
-
-  .motion-ready .reveal-rise {
-    translate: 0 14px;
-  }
-
   .motion-ready .reveal-slide-left {
-    translate: -22px 0;
+    translate: -14px 0;
   }
 
   .motion-ready .reveal-slide-right {
-    translate: 22px 0;
+    translate: 14px 0;
   }
 
-  .motion-ready .reveal-blur-up {
-    translate: 0 12px;
-    filter: blur(7px);
+  .motion-ready .reveal-rise,
+  .motion-ready .reveal-heading {
+    translate: 0 10px;
   }
 
-  .motion-ready .reveal-blur-left {
-    translate: -17px 0;
-    filter: blur(6px);
-  }
-
-  .motion-ready .reveal-blur-right {
-    translate: 17px 0;
-    filter: blur(6px);
-  }
-
-  .motion-ready .reveal-tilt-left,
-  .motion-ready .reveal-tilt-right {
-    translate: 0 12px;
-    rotate: 0deg;
+  .motion-ready .reveal-heading {
+    filter: blur(2px);
   }
 }
 
@@ -255,8 +171,6 @@
   .reveal-target.is-visible {
     opacity: 1 !important;
     translate: none !important;
-    scale: 1 !important;
-    rotate: 0deg !important;
     filter: none !important;
     transition: none !important;
     animation: none !important;
@@ -269,23 +183,5 @@
     transition: none !important;
     animation: none !important;
     transform: none !important;
-  }
-
-  .categoryItem:hover,
-  .collectionCard:hover,
-  .productTile:hover,
-  .tradeBenefits article:hover,
-  .supplyGrid article:hover,
-  .primaryButton:hover,
-  .headerButton:hover,
-  .textButton:hover {
-    transform: none !important;
-  }
-
-  .collectionCard__media img,
-  .productTile__media img,
-  .companyBand__media img,
-  .commerceHero__media img {
-    transition: none !important;
   }
 }

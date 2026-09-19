@@ -1,5 +1,7 @@
 import Image from 'next/image';
-import beautyVisual from '@/public/category-beauty.webp';
+
+const heroImage =
+  'https://images.pexels.com/photos/12602354/pexels-photo-12602354.jpeg?auto=compress&cs=tinysrgb&w=2400';
 
 export function CommerceHero() {
   return (
@@ -25,10 +27,11 @@ export function CommerceHero() {
 
         <div className="commerceHero__media">
           <Image
-            src={beautyVisual}
-            alt="Premium cosmetics and personal care products supplied by Phildhabi General Trading"
+            src={heroImage}
+            alt="Premium skincare and personal care products photographed in Dubai"
             fill
             priority
+            fetchPriority="high"
             sizes="(max-width: 900px) 100vw, 54vw"
           />
         </div>

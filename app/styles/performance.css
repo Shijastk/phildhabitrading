@@ -1,0 +1,30 @@
+/* Scrolling and image performance refinements */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.commerceHero__media img,
+.collectionCard__media img,
+.productTile__media img,
+.companyBand__media img {
+  backface-visibility: hidden;
+}
+
+.commerceHero__media,
+.collectionCard__media,
+.productTile__media,
+.companyBand__media {
+  contain: paint;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :target {
+    scroll-margin-top: 88px;
+  }
+}

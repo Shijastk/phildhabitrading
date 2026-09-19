@@ -1,14 +1,19 @@
 import Image from 'next/image';
 
 const image =
-  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=86';
+  'https://images.pexels.com/photos/4487361/pexels-photo-4487361.jpeg?auto=compress&cs=tinysrgb&w=2200';
 
 export function CompanyBand() {
   return (
     <section className="companyBand" id="company">
       <div className="siteShell companyBand__grid">
         <div className="companyBand__media">
-          <Image src={image} alt="Modern business building representing Phildhabi General Trading" fill sizes="50vw" />
+          <Image
+            src={image}
+            alt="Warehouse team handling boxed goods in a logistics facility"
+            fill
+            sizes="(max-width: 1050px) 100vw, 50vw"
+          />
         </div>
         <div className="companyBand__copy">
           <p className="eyebrow">ABOUT PHILDHABI</p>

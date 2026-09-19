@@ -1,6 +1,9 @@
 import Image from 'next/image';
-import beautyVisual from '@/public/category-beauty.webp';
-import foodVisual from '@/public/category-food.webp';
+
+const beautyImage =
+  'https://images.pexels.com/photos/3735626/pexels-photo-3735626.jpeg?auto=compress&cs=tinysrgb&w=2000';
+const foodImage =
+  'https://images.pexels.com/photos/4871156/pexels-photo-4871156.jpeg?auto=compress&cs=tinysrgb&w=2000';
 
 export function CollectionsGrid() {
   return (
@@ -23,7 +26,12 @@ export function CollectionsGrid() {
               <a href="#products">Explore beauty <b>→</b></a>
             </div>
             <div className="collectionCard__media">
-              <Image src={beautyVisual} alt="Cosmetics and personal care category" fill sizes="50vw" />
+              <Image
+                src={beautyImage}
+                alt="Beauty and personal care products in a modern retail setting"
+                fill
+                sizes="(max-width: 1050px) 100vw, 50vw"
+              />
             </div>
           </article>
 
@@ -35,7 +43,12 @@ export function CollectionsGrid() {
               <a href="#products">Explore food &amp; FMCG <b>→</b></a>
             </div>
             <div className="collectionCard__media">
-              <Image src={foodVisual} alt="Food and FMCG category" fill sizes="50vw" />
+              <Image
+                src={foodImage}
+                alt="High-quality herbs and spices representing food and FMCG sourcing"
+                fill
+                sizes="(max-width: 1050px) 100vw, 50vw"
+              />
             </div>
           </article>
         </div>

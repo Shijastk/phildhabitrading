@@ -16,51 +16,51 @@ export const navItems = [
 export const products = [
   {
     category: 'beauty',
-    eyebrow: 'Cosmetics',
-    title: 'Fragrance & perfume',
-    copy: 'Premium fragrance and gifting-ready beauty lines.',
+    eyebrow: 'Skincare',
+    title: 'Skincare & face care',
+    copy: 'Clean, retail-ready skincare and daily face-care essentials.',
     image:
-      'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1200&q=88',
+      'https://images.pexels.com/photos/34939748/pexels-photo-34939748.jpeg?auto=compress&cs=tinysrgb&w=1800',
   },
   {
     category: 'beauty',
-    eyebrow: 'Skincare',
-    title: 'Hydrating face care',
-    copy: 'Daily moisturising, cleansing and treatment essentials.',
+    eyebrow: 'Beauty',
+    title: 'Beauty retail assortment',
+    copy: 'A broad cosmetics and personal-care selection for modern shelves.',
     image:
-      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1200&q=88',
+      'https://images.pexels.com/photos/3735625/pexels-photo-3735625.jpeg?auto=compress&cs=tinysrgb&w=1800',
   },
   {
     category: 'beauty',
     eyebrow: 'Personal care',
-    title: 'Beauty & body care',
-    copy: 'Retail-ready personal care for everyday routines.',
+    title: 'Beauty & wellness essentials',
+    copy: 'Personal-care and beauty products presented for everyday retail demand.',
     image:
-      'https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=88',
+      'https://images.pexels.com/photos/3735626/pexels-photo-3735626.jpeg?auto=compress&cs=tinysrgb&w=1800',
   },
   {
     category: 'food',
     eyebrow: 'Food',
-    title: 'Rice & grains',
-    copy: 'Pantry staples for groceries, wholesalers and resellers.',
+    title: 'Rice, grains & pulses',
+    copy: 'Staple grains and pantry ingredients for grocery and wholesale buyers.',
     image:
-      'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1200&q=88',
+      'https://images.pexels.com/photos/8108057/pexels-photo-8108057.jpeg?auto=compress&cs=tinysrgb&w=1800',
   },
   {
     category: 'food',
     eyebrow: 'Food',
     title: 'Oils & condiments',
-    copy: 'Cooking essentials, condiments and shelf-ready staples.',
+    copy: 'Cooking oils, condiments and practical kitchen essentials.',
     image:
-      'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1200&q=88',
+      'https://images.pexels.com/photos/10048335/pexels-photo-10048335.jpeg?auto=compress&cs=tinysrgb&w=1800',
   },
   {
     category: 'fmcg',
     eyebrow: 'FMCG',
-    title: 'Everyday essentials',
-    copy: 'Fast-moving packaged goods for repeat purchase.',
+    title: 'Packaged everyday goods',
+    copy: 'Fast-moving shelf products suited to recurring retail demand.',
     image:
-      'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1200&q=88',
+      'https://images.pexels.com/photos/10907746/pexels-photo-10907746.jpeg?auto=compress&cs=tinysrgb&w=1800',
   },
 ] as const;
 
@@ -86,7 +86,6 @@ export const processSteps = [
     copy: 'We support dependable fulfilment and recurring wholesale demand.',
   },
 ];
-
 
 /* Legacy exports kept for type-check compatibility with unused earlier sections. */
 export const capabilities = [
