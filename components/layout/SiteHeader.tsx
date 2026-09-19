@@ -1,6 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import brandLogo from '@/public/phildhabi-logo.webp';
 import { company } from '@/data/site';
 
 const links = [
@@ -9,6 +11,7 @@ const links = [
   ['Products', '#products'],
   ['Why us', '#why-us'],
   ['Company', '#company'],
+  ['Trust', '#trust'],
   ['Contact', '#contact'],
 ];
 
@@ -81,7 +84,7 @@ export function SiteHeader() {
     <>
       <div className="noticeBar">
         <div className="siteShell noticeBar__inner">
-          <span>Wholesale cosmetics, food &amp; FMCG across the UAE</span>
+          <span>{company.experienceLabel} · Wholesale cosmetics, food &amp; FMCG</span>
           <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
         </div>
       </div>
@@ -90,7 +93,14 @@ export function SiteHeader() {
         <header className={`siteHeader siteHeader--${mode}`}>
           <div className="siteShell siteHeader__inner">
             <a className="siteBrand" href="#top" aria-label="Phildhabi General Trading home">
-              <span className="siteBrand__mark">P</span>
+              <Image
+                className="siteBrand__logo"
+                src={brandLogo}
+                alt="Phildhabi General Trading logo"
+                width={52}
+                height={38}
+                priority
+              />
               <span>
                 <strong>Phildhabi</strong>
                 <small>GENERAL TRADING</small>
@@ -102,6 +112,7 @@ export function SiteHeader() {
               type="button"
               aria-expanded={open}
               aria-controls="site-navigation"
+              aria-label="Toggle navigation"
               onClick={() => setOpen((value) => !value)}
             >
               <span />
@@ -109,7 +120,7 @@ export function SiteHeader() {
               <span />
             </button>
 
-            <nav id="site-navigation" className={`siteNav ${open ? 'siteNav--open' : ''}`}>
+            <nav id="site-navigation" className={`siteNav ${open ? 'siteNav--open' : ''}`} aria-label="Primary navigation">
               {links.map(([label, href]) => (
                 <a key={href} href={href} onClick={() => setOpen(false)}>
                   {label}

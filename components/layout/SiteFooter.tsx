@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import brandLogo from '@/public/phildhabi-logo.webp';
 import { company } from '@/data/site';
 
 export function SiteFooter() {
@@ -5,16 +7,19 @@ export function SiteFooter() {
     <footer className="siteFooter">
       <div className="siteShell footerMain">
         <div>
-          <a className="siteBrand siteBrand--footer" href="#top">
-            <span className="siteBrand__mark">P</span>
+          <a className="siteBrand siteBrand--footer" href="#top" aria-label="Back to top">
+            <span className="footerLogoTile">
+              <Image src={brandLogo} alt="Phildhabi General Trading logo" width={64} height={47} />
+            </span>
             <span>
               <strong>Phildhabi</strong>
               <small>GENERAL TRADING</small>
             </span>
           </a>
           <p className="footerSummary">
-            B2B sourcing and wholesale supply across cosmetics, personal care, food and FMCG categories.
+            Wholesale sourcing across cosmetics, personal care, food and FMCG for business buyers in Dubai and Abu Dhabi.
           </p>
+          <p className="footerSince">Serving UAE trade since {company.experienceSince}</p>
         </div>
 
         <div className="footerGroup">
@@ -22,6 +27,7 @@ export function SiteFooter() {
           <a href="#categories">Categories</a>
           <a href="#products">Products</a>
           <a href="#company">Company</a>
+          <a href="#trust">Trust &amp; compliance</a>
         </div>
 
         <div className="footerGroup">
