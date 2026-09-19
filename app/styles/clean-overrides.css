@@ -1,0 +1,469 @@
+/* Clean semi-sharp refinement layer
+   Removes visible divider-heavy UI while preserving the blue commerce system. */
+
+:root {
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --soft-shadow: 0 14px 36px rgba(8, 40, 68, 0.055);
+}
+
+/* Global type sizing */
+.eyebrow {
+  font-size: 12px;
+}
+
+.primaryButton,
+.headerButton,
+.textButton {
+  font-size: 14px;
+}
+
+.primaryButton,
+.headerButton {
+  min-height: 48px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding-inline: 20px;
+}
+
+.textButton {
+  min-height: 48px;
+}
+
+.sectionTopline > a,
+.sectionTopline--products > a {
+  font-size: 13px;
+}
+
+.sectionHeadingRow > p {
+  font-size: 14px;
+}
+
+.noticeBar__inner {
+  min-height: 36px;
+  font-size: 12px;
+}
+
+.siteHeader {
+  border-bottom: 0;
+  box-shadow: 0 5px 24px rgba(8, 40, 68, 0.035);
+}
+
+.siteHeader__inner {
+  min-height: 80px;
+}
+
+.siteBrand__mark {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+}
+
+.siteBrand strong {
+  font-size: 20px;
+}
+
+.siteBrand small {
+  font-size: 9px;
+}
+
+.siteNav {
+  gap: 30px;
+}
+
+.siteNav a {
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.siteNav a::after {
+  display: none;
+}
+
+.siteNav a:hover {
+  color: var(--blue-700);
+}
+
+.headerButton {
+  min-height: 44px;
+  font-size: 13px;
+}
+
+/* Hero */
+.commerceHero__copy > p:not(.eyebrow) {
+  font-size: 16px;
+}
+
+.heroMicro {
+  margin-top: 32px;
+  padding-top: 0;
+  gap: 10px;
+  border-top: 0;
+}
+
+.heroMicro span {
+  padding: 8px 11px;
+  border-radius: var(--radius-sm);
+  color: #46667f;
+  background: rgba(255,255,255,0.46);
+  font-size: 12px;
+}
+
+/* Category navigation */
+.categoryStrip {
+  border-bottom: 0;
+}
+
+.categoryStrip__grid {
+  gap: 10px;
+  border: 0;
+}
+
+.categoryItem {
+  min-height: 128px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--grey-50);
+}
+
+.categoryItem:hover {
+  background: var(--blue-50);
+  transform: translateY(-2px);
+}
+
+.categoryItem strong {
+  font-size: 12.5px;
+}
+
+.categoryItem__icon {
+  width: 54px;
+  height: 54px;
+}
+
+/* Blue values section */
+.valueItem h3 {
+  font-size: 15px;
+}
+
+.valueItem p {
+  font-size: 13px;
+}
+
+/* Collection campaign blocks */
+.collectionCard {
+  border: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--soft-shadow);
+}
+
+.collectionCard__copy > span {
+  font-size: 10.5px;
+}
+
+.collectionCard__copy > p {
+  font-size: 14px;
+}
+
+.collectionCard__copy > a {
+  font-size: 13px;
+}
+
+.collectionCard__media {
+  overflow: hidden;
+}
+
+/* Featured product merchandising */
+.productTile {
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--soft-shadow);
+}
+
+.productTile__body {
+  min-height: 168px;
+  padding: 21px 22px 23px;
+}
+
+.productTile__body > span {
+  font-size: 10.5px;
+}
+
+.productTile h3 {
+  font-size: 16px;
+}
+
+.productTile p {
+  font-size: 12.5px;
+}
+
+.productTile a {
+  font-size: 12px;
+}
+
+/* Benefits: use space instead of divider lines */
+.tradeBenefits {
+  padding: 46px 0;
+  border: 0;
+  background: #fff;
+}
+
+.tradeBenefits__grid {
+  gap: 12px;
+}
+
+.tradeBenefits article {
+  min-height: 138px;
+  padding: 22px 20px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--grey-50);
+}
+
+.tradeBenefits h3 {
+  font-size: 13.5px;
+}
+
+.tradeBenefits p {
+  font-size: 11.5px;
+}
+
+/* Company */
+.companyBand__media {
+  border: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--soft-shadow);
+}
+
+.companyBand__copy > p:not(.eyebrow) {
+  font-size: 14.5px;
+}
+
+.companyStats {
+  margin-top: 30px;
+  gap: 10px;
+  border-top: 0;
+}
+
+.companyStats div,
+.companyStats div:not(:first-child) {
+  padding: 15px 16px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.52);
+}
+
+.companyStats strong {
+  font-size: 25px;
+}
+
+.companyStats span {
+  font-size: 11px;
+}
+
+/* Supply process */
+.supplyGrid {
+  gap: 11px;
+  border: 0;
+}
+
+.supplyGrid article {
+  min-height: 220px;
+  padding: 27px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--grey-50);
+}
+
+.supplyGrid article > span {
+  font-size: 12.5px;
+}
+
+.supplyGrid h3 {
+  margin-top: 31px;
+  font-size: 16px;
+}
+
+.supplyGrid p {
+  font-size: 12.5px;
+}
+
+/* FAQ */
+.faqList {
+  display: grid;
+  gap: 9px;
+  border-top: 0;
+}
+
+.faqList details {
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.58);
+}
+
+.faqList summary {
+  min-height: 66px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+
+.faqList details p {
+  margin: -2px 18px 20px;
+  font-size: 12.5px;
+}
+
+/* Contact */
+.contactCopy > p:not(.eyebrow) {
+  font-size: 14.5px;
+}
+
+.contactMeta {
+  margin-top: 26px;
+  padding-top: 0;
+  border-top: 0;
+  font-size: 12px;
+}
+
+.contactMeta a {
+  font-size: 15px;
+}
+
+.contactForm {
+  border: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 46px rgba(4, 31, 55, 0.15);
+}
+
+.contactForm label > span {
+  font-size: 10.5px;
+}
+
+.contactForm input,
+.contactForm select,
+.contactForm textarea {
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--grey-50);
+}
+
+.contactForm input,
+.contactForm select {
+  min-height: 46px;
+}
+
+.contactForm input:focus,
+.contactForm select:focus,
+.contactForm textarea:focus {
+  border: 0;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(22,113,189,0.16);
+}
+
+.contactForm button {
+  min-height: 48px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+}
+
+/* Footer */
+.footerSummary {
+  font-size: 12.5px;
+}
+
+.footerGroup {
+  font-size: 12px;
+}
+
+.footerGroup h2 {
+  font-size: 12.5px;
+}
+
+.footerBottom {
+  padding-top: 0;
+  border-top: 0;
+  font-size: 10.5px;
+}
+
+/* Mobile/tablet: keep the same clean language */
+@media (max-width: 1050px) {
+  .siteNav--open {
+    border: 0;
+    border-radius: var(--radius-md);
+    box-shadow: 0 18px 44px rgba(8,40,68,0.11);
+  }
+
+  .tradeBenefits article,
+  .tradeBenefits article:nth-child(2),
+  .tradeBenefits article:nth-child(-n+2) {
+    border: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .noticeBar__inner {
+    font-size: 10px;
+  }
+
+  .siteBrand strong {
+    font-size: 18px;
+  }
+
+  .siteBrand small {
+    font-size: 8px;
+  }
+
+  .siteNav a {
+    font-size: 14px;
+  }
+
+  .commerceHero__copy > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+
+  .primaryButton,
+  .textButton {
+    font-size: 14px;
+  }
+
+  .categoryStrip__grid {
+    gap: 9px;
+  }
+
+  .categoryItem {
+    min-height: 118px;
+  }
+
+  .categoryItem strong {
+    font-size: 12px;
+  }
+
+  .valueItem {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .tradeBenefits article,
+  .tradeBenefits article:nth-child(2) {
+    border: 0;
+  }
+
+  .companyStats {
+    gap: 8px;
+  }
+
+  .companyStats div,
+  .companyStats div:not(:first-child) {
+    padding: 14px 15px;
+    border: 0;
+  }
+
+  .supplyGrid {
+    gap: 9px;
+  }
+
+  .footerGroup {
+    font-size: 11.5px;
+  }
+}
