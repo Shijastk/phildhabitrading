@@ -1,5 +1,6 @@
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SiteFooter } from '@/components/layout/SiteFooter';
+import { MotionController } from '@/components/ui/MotionController';
 import { CommerceHero } from '@/components/sections/CommerceHero';
 import { CategoryStrip } from '@/components/sections/CategoryStrip';
 import { ValuesBand } from '@/components/sections/ValuesBand';
@@ -14,6 +15,7 @@ import { TradeContact } from '@/components/sections/TradeContact';
 export default function HomePage() {
   return (
     <>
+      <MotionController />
       <SiteHeader />
       <main>
         <CommerceHero />

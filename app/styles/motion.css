@@ -1,0 +1,143 @@
+/* Premium scroll-reveal motion layer */
+
+.motion-ready .reveal-target {
+  opacity: 0;
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    translate 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    scale 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, translate, scale;
+}
+
+.motion-ready .reveal-rise {
+  translate: 0 22px;
+}
+
+.motion-ready .reveal-fade {
+  translate: 0 8px;
+}
+
+.motion-ready .reveal-scale {
+  scale: 0.985;
+  translate: 0 10px;
+}
+
+.motion-ready .reveal-target.is-visible {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+  will-change: auto;
+}
+
+/* Micro-interactions: subtle and independent from reveal transforms */
+.primaryButton,
+.headerButton,
+.textButton,
+.categoryItem,
+.collectionCard,
+.productTile,
+.tradeBenefits article,
+.supplyGrid article,
+.faqList details,
+.contactForm button {
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 220ms ease;
+}
+
+.categoryItem:hover,
+.tradeBenefits article:hover,
+.supplyGrid article:hover {
+  transform: translateY(-3px);
+}
+
+.collectionCard:hover,
+.productTile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(8, 40, 68, 0.075);
+}
+
+.collectionCard__media img,
+.productTile__media img,
+.companyBand__media img,
+.commerceHero__media img {
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.collectionCard:hover .collectionCard__media img,
+.productTile:hover .productTile__media img {
+  transform: scale(1.025);
+}
+
+.faqList details {
+  transition:
+    background-color 180ms ease,
+    box-shadow 220ms ease;
+}
+
+.faqList details[open] {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 24px rgba(8, 40, 68, 0.04);
+}
+
+.faqList summary span {
+  transition: transform 180ms ease;
+}
+
+/* Do not animate when the user requests reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-target,
+  .reveal-target.is-visible {
+    opacity: 1 !important;
+    translate: none !important;
+    scale: 1 !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .categoryItem:hover,
+  .collectionCard:hover,
+  .productTile:hover,
+  .tradeBenefits article:hover,
+  .supplyGrid article:hover,
+  .primaryButton:hover,
+  .headerButton:hover,
+  .textButton:hover {
+    transform: none !important;
+  }
+
+  .collectionCard__media img,
+  .productTile__media img,
+  .companyBand__media img,
+  .commerceHero__media img {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .motion-ready .reveal-target {
+    transition-duration: 520ms, 580ms, 600ms;
+  }
+
+  .motion-ready .reveal-rise {
+    translate: 0 14px;
+  }
+
+  .motion-ready .reveal-fade {
+    translate: 0 5px;
+  }
+
+  .motion-ready .reveal-scale {
+    scale: 0.99;
+    translate: 0 7px;
+  }
+}
