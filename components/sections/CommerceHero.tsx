@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import heroVisual from '@/public/hero-phildhabi-premium.png';
+import heroVisual from '@/public/hero-phildhabi-premium.webp';
 
 export function CommerceHero() {
   return (
