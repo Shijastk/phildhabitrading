@@ -34,23 +34,6 @@
     box-shadow: var(--shadow-card);
   }
 
-  .hero {
-    padding-top: 55px;
-  }
-
-  .heroGrid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .heroComposition {
-    min-height: 500px;
-  }
-
-  .heroCopy {
-    max-width: 760px;
-  }
-
   .promiseGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -136,62 +119,6 @@
   .headerSearch,
   .headerCta {
     display: none;
-  }
-
-  .hero {
-    padding-top: 26px;
-  }
-
-  .heroGrid {
-    min-height: auto;
-    padding-bottom: 44px;
-  }
-
-  .hero h1 {
-    font-size: clamp(43px, 13vw, 60px);
-  }
-
-  .heroLead {
-    font-size: 15px;
-  }
-
-  .heroActions {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .heroActions .button {
-    width: 100%;
-  }
-
-  .heroTrustRow {
-    gap: 11px;
-  }
-
-  .heroComposition {
-    min-height: 390px;
-  }
-
-  .heroGlass--beauty {
-    left: 30px;
-    width: 62%;
-    height: 300px;
-  }
-
-  .heroGlass--fragrance {
-    width: 34%;
-    height: 170px;
-  }
-
-  .heroGlass--food {
-    width: 47%;
-    height: 220px;
-  }
-
-  .heroFloatingNote {
-    width: 145px;
-    right: 8px;
-    top: 36px;
   }
 
   .promiseGrid {
