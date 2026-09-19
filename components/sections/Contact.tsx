@@ -1,8 +1,12 @@
 'use client';
 
 import type { FormEvent } from 'react';
+import Image from 'next/image';
 import { company } from '@/data/site';
 import { ArrowIcon } from '@/components/ui/ArrowIcon';
+
+const skyline =
+  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=86';
 
 export function Contact() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -18,49 +22,42 @@ export function Contact() {
       `Requirement: ${form.get('message')}`,
     ].join('\n');
 
-    const number = company.phoneHref.replace('+', '');
-    window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+    window.open(
+      `https://wa.me/${company.phoneHref.replace('+', '')}?text=${encodeURIComponent(message)}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
   };
 
   return (
-    <section className="contactSection section" id="contact">
-      <div className="shell contactGrid">
-        <div className="contactIntro">
-          <p className="sectionEyebrow">START A TRADE ENQUIRY</p>
-          <h2>Looking for a dependable supplier?</h2>
-          <p className="contactIntro__lead">
-            Tell us what you are looking for. We will respond with the next practical step for sourcing, availability or quotation.
-          </p>
+    <section className="contactSection" id="contact">
+      <div className="contactSkyline" aria-hidden="true">
+        <Image src={skyline} alt="" fill sizes="100vw" />
+      </div>
 
-          <div className="contactDetails">
-            <a href={`tel:${company.phoneHref}`}>
-              <span>Call</span>
-              <strong>{company.phoneDisplay}</strong>
-            </a>
-            <a href={`https://wa.me/${company.phoneHref.replace('+', '')}`} target="_blank" rel="noreferrer">
-              <span>WhatsApp</span>
-              <strong>Start a conversation ↗</strong>
-            </a>
-            <div>
-              <span>Coverage</span>
-              <strong>{company.coverage}</strong>
-            </div>
-          </div>
+      <div className="shell contactLayout">
+        <div className="contactIntro">
+          <p className="sectionEyebrow">LET&apos;S WORK TOGETHER</p>
+          <h2>Let&apos;s grow together.</h2>
+          <p>
+            Partner with Phildhabi for wholesale sourcing, product enquiries and long-term supply conversations.
+          </p>
+          <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
         </div>
 
         <form className="enquiryForm" onSubmit={handleSubmit}>
           <div className="enquiryForm__heading">
             <div>
-              <p>Business enquiry</p>
-              <h3>Request a quote</h3>
+              <p>Send us an enquiry</p>
+              <h3>Tell us what you need</h3>
             </div>
             <span>We will prepare a WhatsApp enquiry from your details.</span>
           </div>
 
           <div className="formGrid">
             <label>
-              <span>Full name</span>
-              <input required name="name" placeholder="Your name" />
+              <span>Your name</span>
+              <input required name="name" placeholder="Full name" />
             </label>
             <label>
               <span>Company</span>
@@ -71,7 +68,7 @@ export function Contact() {
               <input required name="phone" placeholder="+971 ..." />
             </label>
             <label>
-              <span>Category</span>
+              <span>Product interest</span>
               <select name="category" defaultValue="Cosmetics & Personal Care">
                 <option>Cosmetics & Personal Care</option>
                 <option>Food & Beverage</option>
@@ -80,8 +77,8 @@ export function Contact() {
               </select>
             </label>
             <label className="formGrid__full">
-              <span>What do you need?</span>
-              <textarea required name="message" rows={5} placeholder="Products, brands, quantity, delivery area..." />
+              <span>Your message</span>
+              <textarea required name="message" rows={4} placeholder="Products, brands, quantity, delivery area..." />
             </label>
           </div>
 
@@ -89,8 +86,16 @@ export function Contact() {
             <span>Send enquiry on WhatsApp</span>
             <ArrowIcon />
           </button>
-          <p className="enquiryForm__note">Business enquiries only · No retail checkout</p>
         </form>
+
+        <aside className="contactCard">
+          <span>OUR LOCATION</span>
+          <strong>{company.coverage}</strong>
+          <span>CALL US</span>
+          <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
+          <span>TRADE ENQUIRIES</span>
+          <b>WhatsApp available</b>
+        </aside>
       </div>
     </section>
   );

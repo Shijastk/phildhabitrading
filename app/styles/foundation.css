@@ -1,20 +1,20 @@
 :root {
-  --navy: #102a43;
-  --navy-deep: #091d30;
-  --navy-soft: #1c3d5a;
-  --berry: #b7244b;
-  --berry-dark: #8f1738;
-  --rose: #e7a4b3;
-  --terracotta: #c96d55;
-  --ivory: #fbf7f2;
-  --sand: #efe4d8;
-  --paper: #ffffff;
-  --ink: #17222e;
-  --muted: #63707d;
-  --line: #e5ded7;
+  --blue: #0c57b7;
+  --blue-deep: #073876;
+  --blue-ink: #092a59;
+  --blue-soft: #eaf4ff;
+  --blue-mist: #f4f9ff;
+  --pink-soft: #fff1f5;
+  --pink: #d77996;
+  --peach-soft: #fff5e8;
+  --gold: #c9883b;
+  --ink: #10213c;
+  --text: #485a70;
+  --muted: #728197;
+  --line: #dce8f5;
   --white: #ffffff;
-  --shadow-sm: 0 12px 34px rgba(16, 42, 67, 0.08);
-  --shadow-md: 0 24px 70px rgba(16, 42, 67, 0.13);
+  --shadow-soft: 0 18px 50px rgba(24, 76, 135, 0.09);
+  --shadow-card: 0 16px 42px rgba(36, 88, 150, 0.12);
   --radius-sm: 10px;
   --radius-md: 18px;
   --radius-lg: 28px;
@@ -31,9 +31,9 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--paper);
+  background: #fff;
   font-family: var(--font-body), Arial, sans-serif;
-  font-size: 16.5px;
+  font-size: 16px;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -51,17 +51,12 @@ button,
 input,
 select,
 textarea {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -72,91 +67,49 @@ img {
 h1,
 h2,
 h3,
-h4,
 p {
   margin-top: 0;
 }
 
 h1,
 h2,
-h3,
-h4 {
-  font-family: var(--font-display), Arial, sans-serif;
-  letter-spacing: -0.035em;
+h3 {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: -0.028em;
+  color: var(--blue-ink);
 }
 
 .shell {
-  width: min(1200px, calc(100% - 48px));
+  width: min(1240px, calc(100% - 44px));
   margin-inline: auto;
 }
 
 .section {
-  padding: 112px 0;
-}
-
-.section--dark {
-  color: var(--white);
+  padding: 92px 0;
 }
 
 .sectionEyebrow {
-  margin: 0 0 17px;
-  color: var(--berry);
-  font-family: var(--font-display), sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  margin: 0 0 14px;
+  color: var(--blue);
+  font-size: 12.5px;
+  font-weight: 800;
   line-height: 1.2;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.sectionHeading {
-  max-width: 720px;
-}
-
-.sectionHeading--center {
-  margin-inline: auto;
-  text-align: center;
-}
-
-.sectionHeading h2 {
-  margin: 0;
-  font-size: clamp(40px, 4.6vw, 62px);
-  font-weight: 650;
-  line-height: 1.04;
-  color: var(--navy-deep);
-}
-
-.sectionHeading__copy {
-  max-width: 620px;
-  margin: 24px 0 0;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.75;
-}
-
-.sectionHeading--inverted h2,
-.sectionHeading--inverted .sectionEyebrow {
-  color: var(--white);
-}
-
-.sectionHeading--inverted .sectionHeading__copy {
-  color: #c5d3df;
-}
-
 .button {
+  min-height: 48px;
   display: inline-flex;
-  min-height: 52px;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  padding: 14px 20px;
+  gap: 17px;
+  padding: 13px 19px;
   border: 1px solid transparent;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-display), sans-serif;
-  font-size: 14px;
-  font-weight: 650;
-  line-height: 1;
-  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 750;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
 .button:hover {
@@ -165,26 +118,36 @@ h4 {
 
 .button--primary {
   color: var(--white);
-  background: var(--berry);
-  box-shadow: 0 12px 28px rgba(183, 36, 75, 0.23);
+  background: linear-gradient(135deg, #0c60c7, #0a4ba2);
+  box-shadow: 0 12px 28px rgba(12, 87, 183, 0.22);
 }
 
 .button--primary:hover {
-  background: var(--berry-dark);
+  box-shadow: 0 16px 34px rgba(12, 87, 183, 0.28);
 }
 
 .button--secondary {
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.34);
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(14px);
+  color: var(--blue-deep);
+  border-color: #9fc3eb;
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .button--secondary:hover {
-  background: rgba(255, 255, 255, 0.13);
+  background: #fff;
+  border-color: var(--blue);
 }
 
 .button--light {
-  color: var(--navy-deep);
-  background: var(--white);
+  color: var(--blue-deep);
+  background: #fff;
+}
+
+.inlineLink,
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--blue);
+  font-size: 13.5px;
+  font-weight: 750;
 }

@@ -1,57 +1,51 @@
 import Image from 'next/image';
 import { ArrowIcon } from '@/components/ui/ArrowIcon';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 
-const categories = [
-  {
-    index: '01',
-    eyebrow: 'BEAUTY & PERSONAL CARE',
-    title: 'Products that feel considered on the shelf.',
-    copy: 'Skincare, fragrances, body care, hair care and everyday grooming lines for beauty retailers and general trade.',
-    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1500&q=88',
-    alt: 'Skincare and beauty products arranged on a clean surface',
-  },
-  {
-    index: '02',
-    eyebrow: 'FOOD & FMCG',
-    title: 'Everyday essentials with repeat demand.',
-    copy: 'Packaged food, snacks, beverages, pantry items and practical FMCG lines for supermarkets, mini marts and resellers.',
-    image: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1500&q=88',
-    alt: 'Food and FMCG products arranged on store shelves',
-  },
-];
+const beautyImage =
+  'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1400&q=90';
+const foodImage =
+  'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=90';
 
 export function CategoryShowcase() {
   return (
     <section className="categorySection section" id="categories">
       <div className="shell">
-        <div className="categorySection__heading">
-          <SectionHeading
-            eyebrow="OUR CORE CATEGORIES"
-            title="A portfolio shaped for modern retail."
-            copy="Two focused trading verticals, presented with the same standard of sourcing, service and wholesale support."
-          />
+        <div className="categoryHeading">
+          <p className="sectionEyebrow">OUR CATEGORIES</p>
+          <h2>Two essential worlds. One trusted partner.</h2>
+          <p>Beauty and everyday nourishment, brought together through one B2B trading relationship.</p>
         </div>
 
         <div className="categoryGrid">
-          {categories.map((category) => (
-            <article className="categoryCard" key={category.index}>
-              <div className="categoryCard__media">
-                <Image src={category.image} alt={category.alt} fill sizes="(max-width: 800px) 92vw, 47vw" />
+          <article className="categoryPanel categoryPanel--beauty">
+            <div className="categoryPanel__copy">
+              <span>PREMIUM BEAUTY</span>
+              <h3>Cosmetics &amp; personal care</h3>
+              <p>Skincare, beauty, fragrance and personal care products for modern retail environments.</p>
+              <a href="#products">Explore cosmetics <ArrowIcon size={17} /></a>
+              <div className="categoryTags">
+                <span>Skincare</span><span>Hair care</span><span>Fragrance</span><span>Personal care</span>
               </div>
-              <div className="categoryCard__body">
-                <div className="categoryCard__meta">
-                  <span>{category.index}</span>
-                  <p>{category.eyebrow}</p>
-                </div>
-                <h3>{category.title}</h3>
-                <p>{category.copy}</p>
-                <a href="#catalog" aria-label={`Explore ${category.eyebrow}`}>
-                  Explore category <ArrowIcon size={17} />
-                </a>
+            </div>
+            <div className="categoryPanel__image">
+              <Image src={beautyImage} alt="Cosmetics and skincare products" fill sizes="(max-width: 800px) 90vw, 42vw" />
+            </div>
+          </article>
+
+          <article className="categoryPanel categoryPanel--food">
+            <div className="categoryPanel__copy">
+              <span>NATURAL GOODNESS</span>
+              <h3>Food items &amp; FMCG</h3>
+              <p>Packaged foods, beverages, pantry staples and repeat-purchase FMCG essentials.</p>
+              <a href="#products">Explore food items <ArrowIcon size={17} /></a>
+              <div className="categoryTags">
+                <span>Rice &amp; grains</span><span>Beverages</span><span>Condiments</span><span>Daily essentials</span>
               </div>
-            </article>
-          ))}
+            </div>
+            <div className="categoryPanel__image">
+              <Image src={foodImage} alt="Food and grocery products" fill sizes="(max-width: 800px) 90vw, 42vw" />
+            </div>
+          </article>
         </div>
       </div>
     </section>

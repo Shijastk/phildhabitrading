@@ -1,14 +1,13 @@
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 import { Hero } from '@/components/sections/Hero';
-import { Capabilities } from '@/components/sections/Capabilities';
-import { Intro } from '@/components/sections/Intro';
+import { PromiseStrip } from '@/components/sections/PromiseStrip';
+import { CompanyStory } from '@/components/sections/CompanyStory';
 import { CategoryShowcase } from '@/components/sections/CategoryShowcase';
-import { Distribution } from '@/components/sections/Distribution';
 import { ProductUniverse } from '@/components/sections/ProductUniverse';
+import { WhyChoose } from '@/components/sections/WhyChoose';
 import { SupplyProcess } from '@/components/sections/SupplyProcess';
-import { MarketFit } from '@/components/sections/MarketFit';
-import { StatsStrip } from '@/components/sections/StatsStrip';
+import { TrustedNetwork } from '@/components/sections/TrustedNetwork';
 import { Contact } from '@/components/sections/Contact';
 
 export default function HomePage() {
@@ -17,14 +16,13 @@ export default function HomePage() {
       <SiteHeader />
       <main>
         <Hero />
-        <Capabilities />
-        <Intro />
+        <PromiseStrip />
+        <CompanyStory />
         <CategoryShowcase />
-        <Distribution />
         <ProductUniverse />
+        <WhyChoose />
         <SupplyProcess />
-        <MarketFit />
-        <StatsStrip />
+        <TrustedNetwork />
         <Contact />
       </main>
       <SiteFooter />

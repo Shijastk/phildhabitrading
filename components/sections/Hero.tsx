@@ -1,67 +1,64 @@
 import Image from 'next/image';
 import { ButtonLink } from '@/components/ui/ButtonLink';
 
-const cosmeticsImage = 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1400&q=88';
-const foodImage = 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=88';
+const beauty =
+  'https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1400&q=90';
+const fragrance =
+  'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=90';
+const food =
+  'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1000&q=90';
+const skyline =
+  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=86';
 
 export function Hero() {
   return (
     <section className="hero" id="top">
-      <div className="hero__ambient hero__ambient--one" aria-hidden="true" />
-      <div className="hero__ambient hero__ambient--two" aria-hidden="true" />
+      <div className="heroSkyline" aria-hidden="true">
+        <Image src={skyline} alt="" fill priority sizes="100vw" />
+      </div>
 
-      <div className="shell hero__grid">
-        <div className="hero__copy">
-          <p className="hero__eyebrow">COSMETICS · FOOD · FMCG · WHOLESALE</p>
+      <div className="shell heroGrid">
+        <div className="heroCopy">
+          <p className="heroKicker">GLOBAL PRODUCTS · STRONGER BUSINESS</p>
           <h1>
-            <span>Beauty, food &amp;</span>
-            <span>everyday essentials.</span>
+            Trusted General Trading for
+            <span> Cosmetics &amp; Food Essentials</span>
           </h1>
-          <p className="hero__lead">
-            A dependable general trading partner connecting retail-ready cosmetics, personal care, food and FMCG products with businesses across the UAE.
+          <p className="heroLead">
+            Phildhabi General Trading connects quality beauty, food and FMCG products with retailers,
+            resellers and business buyers across the UAE.
           </p>
 
-          <div className="hero__actions">
-            <ButtonLink href="#categories">Explore categories</ButtonLink>
-            <ButtonLink href="#contact" variant="secondary">Request a quote</ButtonLink>
+          <div className="heroActions">
+            <ButtonLink href="#products">Explore our products</ButtonLink>
+            <ButtonLink href="#company" variant="secondary">Discover our story</ButtonLink>
           </div>
 
-          <div className="hero__proof" aria-label="Trading strengths">
-            <div><strong>UAE</strong><span>market focused</span></div>
-            <div><strong>B2B</strong><span>wholesale supply</span></div>
-            <div><strong>2</strong><span>core product worlds</span></div>
+          <div className="heroTrustRow">
+            <div><b>✦</b><span>Quality products</span></div>
+            <div><b>◎</b><span>Global sourcing</span></div>
+            <div><b>↗</b><span>Reliable supply</span></div>
           </div>
         </div>
 
-        <div className="heroVisual" aria-label="Cosmetics and food product imagery">
-          <div className="heroVisual__main">
-            <Image
-              src={cosmeticsImage}
-              alt="Premium skincare and cosmetic products"
-              fill
-              priority
-              sizes="(max-width: 900px) 88vw, 44vw"
-            />
-            <div className="heroVisual__label">
-              <span>01</span>
-              <div><strong>Beauty &amp; care</strong><small>Skincare · fragrance · personal care</small></div>
-            </div>
+        <div className="heroComposition" aria-label="Cosmetics and food product showcase">
+          <div className="heroGlass heroGlass--beauty">
+            <div className="heroGlass__label">BEAUTY FOR MODERN RETAIL</div>
+            <Image src={beauty} alt="Premium beauty and skincare products" fill priority sizes="36vw" />
           </div>
 
-          <div className="heroVisual__secondary">
-            <Image
-              src={foodImage}
-              alt="Fresh food and grocery products"
-              fill
-              sizes="(max-width: 900px) 55vw, 24vw"
-            />
-            <div className="heroVisual__chip">Food &amp; FMCG</div>
+          <div className="heroGlass heroGlass--fragrance">
+            <Image src={fragrance} alt="Fragrance and perfume products" fill sizes="18vw" />
           </div>
 
-          <div className="heroVisual__note">
-            <span>Dubai</span>
-            <span>Abu Dhabi</span>
-            <strong>Wholesale supply</strong>
+          <div className="heroGlass heroGlass--food">
+            <div className="heroGlass__label">FOOD &amp; FMCG</div>
+            <Image src={food} alt="Olive oil and food essentials" fill sizes="22vw" />
+          </div>
+
+          <div className="heroFloatingNote">
+            <span>Dubai &amp; Abu Dhabi</span>
+            <strong>Wholesale supply for growing businesses</strong>
           </div>
         </div>
       </div>
