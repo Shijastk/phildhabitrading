@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { Manrope, Playfair_Display } from 'next/font/google';
+import { Fraunces, Manrope } from 'next/font/google';
 import './globals.css';
 
 const bodyFont = Manrope({
@@ -9,7 +9,7 @@ const bodyFont = Manrope({
   display: 'swap',
 });
 
-const displayFont = Playfair_Display({
+const displayFont = Fraunces({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',

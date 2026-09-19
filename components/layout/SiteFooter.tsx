@@ -5,14 +5,14 @@ export function SiteFooter() {
     <footer className="siteFooter">
       <div className="shell footerTop">
         <div className="footerBrand">
-          <a className="brand" href="#top" aria-label="Back to top">
+          <a className="brand brand--footer" href="#top">
             <span className="brand__mark">P</span>
             <span className="brand__copy">
               <strong>Phildhabi</strong>
               <small>GENERAL TRADING</small>
             </span>
           </a>
-          <p>Global products. Reliable supply. Built for growing businesses across the UAE.</p>
+          <p>Beauty. Food. Everyday demand. One dependable trading relationship.</p>
         </div>
 
         <nav className="footerNav" aria-label="Footer navigation">
@@ -28,7 +28,7 @@ export function SiteFooter() {
       </div>
 
       <div className="shell footerBottom">
-        <span>© 2026 Phildhabi General Trading. All rights reserved.</span>
+        <span>© 2026 Phildhabi General Trading.</span>
         <span>Wholesale cosmetics · food · FMCG</span>
       </div>
     </footer>

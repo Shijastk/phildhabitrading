@@ -1,13 +1,11 @@
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 import { Hero } from '@/components/sections/Hero';
-import { PromiseStrip } from '@/components/sections/PromiseStrip';
-import { CompanyStory } from '@/components/sections/CompanyStory';
-import { CategoryShowcase } from '@/components/sections/CategoryShowcase';
-import { ProductUniverse } from '@/components/sections/ProductUniverse';
-import { WhyChoose } from '@/components/sections/WhyChoose';
-import { SupplyProcess } from '@/components/sections/SupplyProcess';
-import { TrustedNetwork } from '@/components/sections/TrustedNetwork';
+import { EditorialStatement } from '@/components/sections/EditorialStatement';
+import { EditorialCategories } from '@/components/sections/EditorialCategories';
+import { EditorialPortfolio } from '@/components/sections/EditorialPortfolio';
+import { EditorialProcess } from '@/components/sections/EditorialProcess';
+import { EditorialProof } from '@/components/sections/EditorialProof';
 import { Contact } from '@/components/sections/Contact';
 
 export default function HomePage() {
@@ -16,13 +14,11 @@ export default function HomePage() {
       <SiteHeader />
       <main>
         <Hero />
-        <PromiseStrip />
-        <CompanyStory />
-        <CategoryShowcase />
-        <ProductUniverse />
-        <WhyChoose />
-        <SupplyProcess />
-        <TrustedNetwork />
+        <EditorialStatement />
+        <EditorialCategories />
+        <EditorialPortfolio />
+        <EditorialProcess />
+        <EditorialProof />
         <Contact />
       </main>
       <SiteFooter />

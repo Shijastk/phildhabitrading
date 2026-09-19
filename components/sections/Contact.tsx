@@ -1,12 +1,7 @@
 'use client';
 
 import type { FormEvent } from 'react';
-import Image from 'next/image';
 import { company } from '@/data/site';
-import { ArrowIcon } from '@/components/ui/ArrowIcon';
-
-const skyline =
-  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=86';
 
 export function Contact() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -30,34 +25,29 @@ export function Contact() {
   };
 
   return (
-    <section className="contactSection" id="contact">
-      <div className="contactSkyline" aria-hidden="true">
-        <Image src={skyline} alt="" fill sizes="100vw" />
-      </div>
-
-      <div className="shell contactLayout">
-        <div className="contactIntro">
-          <p className="sectionEyebrow">LET&apos;S WORK TOGETHER</p>
-          <h2>Let&apos;s grow together.</h2>
-          <p>
-            Partner with Phildhabi for wholesale sourcing, product enquiries and long-term supply conversations.
-          </p>
-          <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
+    <section className="edContact" id="contact">
+      <div className="shell">
+        <div className="edSectionMeta">
+          <span>07 / START A CONVERSATION</span>
+          <p>{company.coverage} · {company.phoneDisplay}</p>
         </div>
 
-        <form className="enquiryForm" onSubmit={handleSubmit}>
-          <div className="enquiryForm__heading">
-            <div>
-              <p>Send us an enquiry</p>
-              <h3>Tell us what you need</h3>
-            </div>
-            <span>We will prepare a WhatsApp enquiry from your details.</span>
+        <div className="edContact__grid">
+          <div className="edContact__copy">
+            <h2>Tell us what needs to move.</h2>
+            <p>
+              Products, categories, quantities or recurring supply — send the requirement and we&apos;ll take
+              the conversation from there.
+            </p>
+            <a href={`https://wa.me/${company.phoneHref.replace('+', '')}`} target="_blank" rel="noreferrer">
+              WhatsApp directly ↗
+            </a>
           </div>
 
-          <div className="formGrid">
+          <form className="edForm" onSubmit={handleSubmit}>
             <label>
-              <span>Your name</span>
-              <input required name="name" placeholder="Full name" />
+              <span>Name</span>
+              <input required name="name" placeholder="Your name" />
             </label>
             <label>
               <span>Company</span>
@@ -68,34 +58,21 @@ export function Contact() {
               <input required name="phone" placeholder="+971 ..." />
             </label>
             <label>
-              <span>Product interest</span>
-              <select name="category" defaultValue="Cosmetics & Personal Care">
+              <span>Category</span>
+              <select name="category" defaultValue="Mixed Requirement">
                 <option>Cosmetics & Personal Care</option>
                 <option>Food & Beverage</option>
                 <option>FMCG / Daily Essentials</option>
                 <option>Mixed Requirement</option>
               </select>
             </label>
-            <label className="formGrid__full">
-              <span>Your message</span>
+            <label className="edForm__wide">
+              <span>Requirement</span>
               <textarea required name="message" rows={4} placeholder="Products, brands, quantity, delivery area..." />
             </label>
-          </div>
-
-          <button className="formSubmit" type="submit">
-            <span>Send enquiry on WhatsApp</span>
-            <ArrowIcon />
-          </button>
-        </form>
-
-        <aside className="contactCard">
-          <span>OUR LOCATION</span>
-          <strong>{company.coverage}</strong>
-          <span>CALL US</span>
-          <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
-          <span>TRADE ENQUIRIES</span>
-          <b>WhatsApp available</b>
-        </aside>
+            <button type="submit">Send trade enquiry ↗</button>
+          </form>
+        </div>
       </div>
     </section>
   );

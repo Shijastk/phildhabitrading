@@ -42,13 +42,9 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a className="headerSearch" href="#products" aria-label="Explore products">
-          <span>⌕</span>
-        </a>
-
         <a className="headerCta" href={whatsapp} target="_blank" rel="noreferrer">
-          Get a quote
-          <ArrowIcon size={16} />
+          Trade enquiry
+          <ArrowIcon size={15} />
         </a>
       </div>
     </header>

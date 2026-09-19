@@ -1,37 +1,25 @@
 :root {
-  --blue: #0c57b7;
-  --blue-deep: #073876;
-  --blue-ink: #092a59;
-  --blue-soft: #eaf4ff;
-  --blue-mist: #f4f9ff;
-  --pink-soft: #fff1f5;
-  --pink: #d77996;
-  --peach-soft: #fff5e8;
-  --gold: #c9883b;
-  --ink: #10213c;
-  --text: #485a70;
-  --muted: #728197;
-  --line: #dce8f5;
+  --ink: #0d2341;
+  --ink-deep: #07182e;
+  --blue: #0d5ab7;
+  --blue-soft: #dcecff;
+  --paper: #f7f4ef;
+  --ivory: #fbf9f5;
+  --rose: #efe2e4;
+  --sand: #eadcc8;
+  --line: rgba(13, 35, 65, 0.16);
+  --muted: #667487;
   --white: #ffffff;
-  --shadow-soft: 0 18px 50px rgba(24, 76, 135, 0.09);
-  --shadow-card: 0 16px 42px rgba(36, 88, 150, 0.12);
-  --radius-sm: 10px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   color: var(--ink);
-  background: #fff;
+  background: var(--ivory);
   font-family: var(--font-body), Arial, sans-serif;
   font-size: 16px;
   line-height: 1.65;
@@ -39,20 +27,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body,
-button,
-input,
-select,
-textarea {
+body, button, input, select, textarea {
   font-family: var(--font-body), Arial, sans-serif;
 }
 
-button,
-input,
-select,
-textarea {
-  font-size: 15px;
-}
+button, input, select, textarea { font-size: 15px; }
 
 a {
   color: inherit;
@@ -64,90 +43,84 @@ img {
   max-width: 100%;
 }
 
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
+figure, h1, h2, h3, p { margin-top: 0; }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: var(--font-display), Georgia, serif;
-  letter-spacing: -0.028em;
-  color: var(--blue-ink);
+  letter-spacing: -0.045em;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
 }
 
 .shell {
-  width: min(1240px, calc(100% - 44px));
+  width: min(1280px, calc(100% - 56px));
   margin-inline: auto;
 }
 
-.section {
-  padding: 92px 0;
-}
-
-.sectionEyebrow {
-  margin: 0 0 14px;
-  color: var(--blue);
-  font-size: 12.5px;
+.edKicker,
+.edSectionMeta span {
+  font-size: 11px;
   font-weight: 800;
-  line-height: 1.2;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
+.edSectionMeta {
+  padding-bottom: 18px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.edSectionMeta span { color: var(--blue); }
+
+.edSectionMeta p {
+  max-width: 460px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  text-align: right;
+}
+
+.edSectionMeta--light {
+  border-bottom-color: rgba(255,255,255,0.2);
+}
+
+.edSectionMeta--light span { color: #a9c9ed; }
+
+.edSectionMeta--light p { color: #92a7bf; }
+
 .button {
-  min-height: 48px;
+  min-height: 50px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 17px;
-  padding: 13px 19px;
+  gap: 18px;
+  padding: 0 18px;
   border: 1px solid transparent;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 750;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
 }
 
-.button:hover {
-  transform: translateY(-2px);
-}
+.button:hover { transform: translateY(-2px); }
 
 .button--primary {
-  color: var(--white);
-  background: linear-gradient(135deg, #0c60c7, #0a4ba2);
-  box-shadow: 0 12px 28px rgba(12, 87, 183, 0.22);
+  color: #fff;
+  background: var(--ink);
 }
 
-.button--primary:hover {
-  box-shadow: 0 16px 34px rgba(12, 87, 183, 0.28);
-}
+.button--primary:hover { background: var(--blue); }
 
 .button--secondary {
-  color: var(--blue-deep);
-  border-color: #9fc3eb;
-  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  border-color: rgba(13,35,65,0.32);
+  background: transparent;
 }
 
 .button--secondary:hover {
-  background: #fff;
-  border-color: var(--blue);
-}
-
-.button--light {
-  color: var(--blue-deep);
-  background: #fff;
-}
-
-.inlineLink,
-.viewAllLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  color: var(--blue);
-  font-size: 13.5px;
-  font-weight: 750;
+  color: #fff;
+  background: var(--ink);
 }
