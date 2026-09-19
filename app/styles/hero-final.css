@@ -1,0 +1,136 @@
+/* Final full-bleed hero using the generated Phildhabi visual */
+
+.commerceHero--full {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #dcecf8;
+}
+
+.commerceHero--full .commerceHero__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.commerceHero--full .commerceHero__backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.commerceHero--full::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(220, 236, 248, 0.98) 0%,
+      rgba(220, 236, 248, 0.94) 25%,
+      rgba(220, 236, 248, 0.70) 42%,
+      rgba(220, 236, 248, 0.18) 58%,
+      rgba(220, 236, 248, 0) 72%
+    );
+}
+
+.commerceHero--full .commerceHero__content {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+}
+
+.commerceHero--full .commerceHero__copy {
+  position: relative;
+  z-index: 2;
+  width: min(590px, 48%);
+  padding: 74px 0 68px;
+}
+
+.commerceHero--full .commerceHero__copy > p:not(.eyebrow) {
+  max-width: 560px;
+}
+
+.commerceHero--full .heroMicro span {
+  background: rgba(255,255,255,0.60);
+  box-shadow: 0 6px 20px rgba(8,40,68,0.035);
+}
+
+@media (min-width: 1500px) {
+  .commerceHero--full,
+  .commerceHero--full .commerceHero__content {
+    min-height: 680px;
+  }
+
+  .commerceHero--full .commerceHero__copy {
+    width: min(620px, 45%);
+  }
+}
+
+@media (max-width: 1050px) {
+  .commerceHero--full,
+  .commerceHero--full .commerceHero__content {
+    min-height: 610px;
+  }
+
+  .commerceHero--full::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(220,236,248,0.98) 0%,
+        rgba(220,236,248,0.93) 38%,
+        rgba(220,236,248,0.58) 62%,
+        rgba(220,236,248,0.12) 82%
+      );
+  }
+
+  .commerceHero--full .commerceHero__copy {
+    width: min(590px, 60%);
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .commerceHero--full {
+    min-height: 700px;
+  }
+
+  .commerceHero--full .commerceHero__content {
+    min-height: 700px;
+    align-items: flex-start;
+  }
+
+  .commerceHero--full .commerceHero__backdrop img {
+    object-position: 64% center;
+  }
+
+  .commerceHero--full::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(220,236,248,0.99) 0%,
+        rgba(220,236,248,0.96) 46%,
+        rgba(220,236,248,0.72) 64%,
+        rgba(220,236,248,0.18) 83%,
+        rgba(220,236,248,0.03) 100%
+      );
+  }
+
+  .commerceHero--full .commerceHero__copy {
+    width: 100%;
+    padding: 48px 0 32px;
+  }
+
+  .commerceHero--full .commerceHero__copy > p:not(.eyebrow) {
+    max-width: 94%;
+  }
+
+  .commerceHero--full .heroMicro {
+    max-width: 92%;
+  }
+}
