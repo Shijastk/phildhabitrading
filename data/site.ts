@@ -86,3 +86,20 @@ export const processSteps = [
     copy: 'We support dependable fulfilment and recurring wholesale demand.',
   },
 ];
+
+
+/* Legacy exports kept for type-check compatibility with unused earlier sections. */
+export const capabilities = [
+  { number: '01', title: 'Curated sourcing', copy: 'Retail-ready products selected around business demand.' },
+  { number: '02', title: 'Beauty & personal care', copy: 'Cosmetics, skincare, fragrance and grooming lines.' },
+  { number: '03', title: 'Food & FMCG', copy: 'Packaged foods, beverages and daily essentials.' },
+  { number: '04', title: 'Wholesale distribution', copy: 'Flexible support for recurring and mixed requirements.' },
+];
+
+export const marketSegments = [
+  'Supermarkets & grocery stores',
+  'Beauty & cosmetics retailers',
+  'Convenience stores & mini marts',
+  'Wholesalers, resellers & distributors',
+  'Hospitality & business buyers',
+];
