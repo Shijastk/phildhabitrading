@@ -2,46 +2,108 @@
 
 import { useLayoutEffect } from 'react';
 
-type RevealType = 'rise' | 'fade' | 'scale';
+type RevealType =
+  | 'rise'
+  | 'fade'
+  | 'scale'
+  | 'slide-left'
+  | 'slide-right'
+  | 'blur-up'
+  | 'blur-left'
+  | 'blur-right'
+  | 'zoom'
+  | 'tilt-left'
+  | 'tilt-right';
 
 type RevealGroup = {
   selector: string;
-  type: RevealType;
+  type?: RevealType;
+  sequence?: RevealType[];
   stagger?: number;
+  delay?: number;
 };
 
 const groups: RevealGroup[] = [
-  { selector: '.commerceHero__copy', type: 'rise' },
-  { selector: '.commerceHero__media', type: 'scale' },
+  // Hero: text sharpens into focus while imagery enters laterally.
+  { selector: '.commerceHero .eyebrow', type: 'fade', delay: 30 },
+  { selector: '.commerceHero h1', type: 'blur-up', delay: 70 },
+  { selector: '.commerceHero__copy > p:not(.eyebrow)', type: 'blur-up', delay: 125 },
+  { selector: '.heroButtons', type: 'rise', delay: 180 },
+  { selector: '.heroMicro span', sequence: ['blur-left', 'blur-right', 'blur-left'], stagger: 70, delay: 210 },
+  { selector: '.commerceHero__media', type: 'slide-right', delay: 80 },
 
-  { selector: '.categoryStrip .sectionTopline', type: 'rise' },
-  { selector: '.categoryItem', type: 'rise', stagger: 55 },
+  // Category navigation.
+  { selector: '.categoryStrip .sectionTopline h2', type: 'blur-up' },
+  { selector: '.categoryStrip .sectionTopline > a', type: 'fade', delay: 90 },
+  {
+    selector: '.categoryItem',
+    sequence: ['slide-left', 'rise', 'rise', 'slide-right', 'slide-left', 'rise', 'rise', 'slide-right'],
+    stagger: 42,
+  },
 
-  { selector: '.valuesBand__intro', type: 'rise' },
-  { selector: '.valueItem', type: 'rise', stagger: 70 },
+  // Blue value band.
+  { selector: '.valuesBand__intro .eyebrow', type: 'fade' },
+  { selector: '.valuesBand__intro h2', type: 'blur-up', delay: 50 },
+  { selector: '.valuesBand__intro > p:not(.eyebrow)', type: 'blur-up', delay: 110 },
+  { selector: '.valueItem', sequence: ['tilt-left', 'zoom', 'zoom', 'tilt-right'], stagger: 75 },
 
-  { selector: '.collectionsSection .sectionHeadingRow', type: 'rise' },
-  { selector: '.collectionCard', type: 'scale', stagger: 110 },
+  // Paired collection cards: deliberately enter from opposite sides.
+  { selector: '.collectionsSection .sectionHeadingRow h2', type: 'blur-up' },
+  { selector: '.collectionsSection .sectionHeadingRow > p', type: 'blur-right', delay: 75 },
+  { selector: '.collectionCard--beauty', type: 'slide-left' },
+  { selector: '.collectionCard--food', type: 'slide-right', delay: 70 },
+  { selector: '.collectionCard h3', type: 'blur-up', delay: 110 },
 
-  { selector: '.featuredSection .sectionTopline', type: 'rise' },
-  { selector: '.productTile', type: 'rise', stagger: 65 },
+  // Products: mixed directions instead of one repeated motion.
+  { selector: '.featuredSection .sectionTopline h2', type: 'blur-up' },
+  { selector: '.featuredSection .sectionTopline > a', type: 'fade', delay: 80 },
+  {
+    selector: '.productTile',
+    sequence: ['slide-left', 'rise', 'slide-right', 'slide-left', 'zoom', 'slide-right'],
+    stagger: 65,
+  },
 
-  { selector: '.tradeBenefits article', type: 'fade', stagger: 55 },
+  // Utility benefits.
+  {
+    selector: '.tradeBenefits article',
+    sequence: ['blur-left', 'zoom', 'zoom', 'blur-right'],
+    stagger: 60,
+  },
 
-  { selector: '.companyBand__media', type: 'scale' },
-  { selector: '.companyBand__copy', type: 'rise' },
-  { selector: '.companyStats div', type: 'rise', stagger: 70 },
+  // About/company split section.
+  { selector: '.companyBand__media', type: 'slide-left' },
+  { selector: '.companyBand__copy .eyebrow', type: 'fade', delay: 40 },
+  { selector: '.companyBand__copy h2', type: 'blur-right', delay: 70 },
+  { selector: '.companyBand__copy > p:not(.eyebrow)', type: 'blur-right', delay: 125 },
+  { selector: '.companyStats div', sequence: ['slide-left', 'rise', 'slide-right'], stagger: 80, delay: 160 },
 
-  { selector: '.supplySection .sectionHeadingRow', type: 'rise' },
-  { selector: '.supplyGrid article', type: 'rise', stagger: 75 },
+  // Process steps get a directional rhythm.
+  { selector: '.supplySection .sectionHeadingRow h2', type: 'blur-up' },
+  { selector: '.supplySection .sectionHeadingRow > p', type: 'blur-right', delay: 75 },
+  {
+    selector: '.supplyGrid article',
+    sequence: ['slide-left', 'rise', 'zoom', 'slide-right'],
+    stagger: 85,
+  },
 
-  { selector: '.faqSection__grid > div:first-child', type: 'rise' },
-  { selector: '.faqList details', type: 'fade', stagger: 55 },
+  // FAQ.
+  { selector: '.faqSection__grid > div:first-child .eyebrow', type: 'fade' },
+  { selector: '.faqSection__grid > div:first-child h2', type: 'blur-left', delay: 55 },
+  {
+    selector: '.faqList details',
+    sequence: ['slide-right', 'blur-right', 'slide-right', 'blur-right'],
+    stagger: 70,
+  },
 
-  { selector: '.contactCopy', type: 'rise' },
-  { selector: '.contactForm', type: 'scale' },
+  // Contact split.
+  { selector: '.contactCopy .eyebrow', type: 'fade' },
+  { selector: '.contactCopy h2', type: 'blur-left', delay: 50 },
+  { selector: '.contactCopy > p:not(.eyebrow)', type: 'blur-left', delay: 110 },
+  { selector: '.contactMeta', type: 'rise', delay: 160 },
+  { selector: '.contactForm', type: 'slide-right', delay: 80 },
 
-  { selector: '.footerMain > *', type: 'fade', stagger: 45 },
+  // Footer is intentionally calm.
+  { selector: '.footerMain > *', sequence: ['fade', 'blur-up', 'blur-up', 'fade'], stagger: 55 },
 ];
 
 export function MotionController() {
@@ -59,14 +121,17 @@ export function MotionController() {
       const elements = Array.from(document.querySelectorAll<HTMLElement>(group.selector));
 
       elements.forEach((element, index) => {
-        element.classList.add('reveal-target', `reveal-${group.type}`);
-        element.style.setProperty('--reveal-delay', `${(group.stagger ?? 0) * index}ms`);
+        const type = group.sequence?.[index % group.sequence.length] ?? group.type ?? 'rise';
+        element.classList.add('reveal-target', `reveal-${type}`);
+        element.style.setProperty(
+          '--reveal-delay',
+          `${(group.delay ?? 0) + (group.stagger ?? 0) * index}ms`
+        );
         targets.push(element);
       });
     }
 
-    // Keep above-the-fold content visible on first paint while still animating later content.
-    const viewportCutoff = window.innerHeight * 0.94;
+    const viewportCutoff = window.innerHeight * 0.92;
     targets.forEach((element) => {
       const rect = element.getBoundingClientRect();
       if (rect.top < viewportCutoff && rect.bottom > 0) {
@@ -80,14 +145,13 @@ export function MotionController() {
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-
           const element = entry.target as HTMLElement;
           element.classList.add('is-visible');
           observer.unobserve(element);
         });
       },
       {
-        threshold: 0.12,
+        threshold: 0.11,
         rootMargin: '0px 0px -7% 0px',
       }
     );
@@ -100,7 +164,10 @@ export function MotionController() {
       observer.disconnect();
       document.documentElement.classList.remove('motion-ready');
       targets.forEach((element) => {
-        element.classList.remove('reveal-target', 'reveal-rise', 'reveal-fade', 'reveal-scale', 'is-visible');
+        element.className = element.className
+          .split(' ')
+          .filter((name) => !name.startsWith('reveal-') && name !== 'is-visible')
+          .join(' ');
         element.style.removeProperty('--reveal-delay');
       });
     };

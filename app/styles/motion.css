@@ -1,36 +1,140 @@
-/* Premium scroll-reveal motion layer */
+/* Multi-direction premium reveal system */
 
 .motion-ready .reveal-target {
   opacity: 0;
+  filter: blur(0);
+  transform-origin: center;
   transition:
     opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
-    translate 720ms cubic-bezier(0.22, 1, 0.36, 1),
-    scale 760ms cubic-bezier(0.22, 1, 0.36, 1);
+    translate 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    scale 780ms cubic-bezier(0.22, 1, 0.36, 1),
+    rotate 780ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 720ms cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, translate, scale;
+  will-change: opacity, translate, scale, rotate, filter;
 }
 
 .motion-ready .reveal-rise {
-  translate: 0 22px;
+  translate: 0 24px;
 }
 
 .motion-ready .reveal-fade {
-  translate: 0 8px;
+  translate: 0 5px;
 }
 
 .motion-ready .reveal-scale {
-  scale: 0.985;
+  scale: 0.975;
   translate: 0 10px;
+}
+
+.motion-ready .reveal-slide-left {
+  translate: -42px 0;
+}
+
+.motion-ready .reveal-slide-right {
+  translate: 42px 0;
+}
+
+.motion-ready .reveal-blur-up {
+  translate: 0 18px;
+  filter: blur(10px);
+}
+
+.motion-ready .reveal-blur-left {
+  translate: -28px 0;
+  filter: blur(9px);
+}
+
+.motion-ready .reveal-blur-right {
+  translate: 28px 0;
+  filter: blur(9px);
+}
+
+.motion-ready .reveal-zoom {
+  scale: 0.94;
+  filter: blur(3px);
+}
+
+.motion-ready .reveal-tilt-left {
+  translate: -18px 14px;
+  rotate: -1.6deg;
+  scale: 0.985;
+}
+
+.motion-ready .reveal-tilt-right {
+  translate: 18px 14px;
+  rotate: 1.6deg;
+  scale: 0.985;
 }
 
 .motion-ready .reveal-target.is-visible {
   opacity: 1;
   translate: 0 0;
   scale: 1;
+  rotate: 0deg;
+  filter: blur(0);
   will-change: auto;
 }
 
-/* Micro-interactions: subtle and independent from reveal transforms */
+/* Header: normal in document flow -> hides upward -> returns as a floating bar. */
+.siteHeaderSlot {
+  position: relative;
+  min-height: 80px;
+  background: #fff;
+}
+
+.siteHeader {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  z-index: 80;
+  transform: translateY(0);
+  transition:
+    transform 185ms cubic-bezier(0.4, 0, 1, 1),
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+}
+
+.siteHeader--normal {
+  position: absolute;
+  top: 0;
+}
+
+.siteHeader--leaving {
+  position: absolute;
+  top: 0;
+  transform: translateY(-112%);
+  box-shadow: none;
+}
+
+.siteHeader--floating {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 11px 36px rgba(8, 40, 68, 0.105);
+  backdrop-filter: blur(14px);
+  animation: headerReturn 310ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.siteHeader--floating .siteHeader__inner {
+  min-height: 70px;
+}
+
+@keyframes headerReturn {
+  from {
+    transform: translateY(-115%);
+    opacity: 0.35;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Micro interactions */
 .primaryButton,
 .headerButton,
 .textButton,
@@ -64,7 +168,7 @@
 .productTile__media img,
 .companyBand__media img,
 .commerceHero__media img {
-  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .collectionCard:hover .collectionCard__media img,
@@ -79,7 +183,7 @@
 }
 
 .faqList details[open] {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 8px 24px rgba(8, 40, 68, 0.04);
 }
 
@@ -87,7 +191,59 @@
   transition: transform 180ms ease;
 }
 
-/* Do not animate when the user requests reduced motion. */
+@media (max-width: 1050px) {
+  .siteHeader--floating .siteNav--open {
+    top: 70px;
+  }
+}
+
+@media (max-width: 720px) {
+  .siteHeaderSlot {
+    min-height: 66px;
+  }
+
+  .siteHeader--floating .siteHeader__inner {
+    min-height: 62px;
+  }
+
+  .motion-ready .reveal-target {
+    transition-duration: 500ms, 590ms, 610ms, 610ms, 570ms;
+  }
+
+  .motion-ready .reveal-rise {
+    translate: 0 14px;
+  }
+
+  .motion-ready .reveal-slide-left {
+    translate: -22px 0;
+  }
+
+  .motion-ready .reveal-slide-right {
+    translate: 22px 0;
+  }
+
+  .motion-ready .reveal-blur-up {
+    translate: 0 12px;
+    filter: blur(7px);
+  }
+
+  .motion-ready .reveal-blur-left {
+    translate: -17px 0;
+    filter: blur(6px);
+  }
+
+  .motion-ready .reveal-blur-right {
+    translate: 17px 0;
+    filter: blur(6px);
+  }
+
+  .motion-ready .reveal-tilt-left,
+  .motion-ready .reveal-tilt-right {
+    translate: 0 12px;
+    rotate: 0deg;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -100,8 +256,19 @@
     opacity: 1 !important;
     translate: none !important;
     scale: 1 !important;
+    rotate: 0deg !important;
+    filter: none !important;
     transition: none !important;
     animation: none !important;
+  }
+
+  .siteHeader,
+  .siteHeader--normal,
+  .siteHeader--leaving,
+  .siteHeader--floating {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
   }
 
   .categoryItem:hover,
@@ -120,24 +287,5 @@
   .companyBand__media img,
   .commerceHero__media img {
     transition: none !important;
-  }
-}
-
-@media (max-width: 720px) {
-  .motion-ready .reveal-target {
-    transition-duration: 520ms, 580ms, 600ms;
-  }
-
-  .motion-ready .reveal-rise {
-    translate: 0 14px;
-  }
-
-  .motion-ready .reveal-fade {
-    translate: 0 5px;
-  }
-
-  .motion-ready .reveal-scale {
-    scale: 0.99;
-    translate: 0 7px;
   }
 }
