@@ -2,6 +2,8 @@ export const company = {
   name: 'Phildhabi General Trading',
   phoneDisplay: '+971 52 830 9091',
   phoneHref: '+971528309091',
+  email: 'info@phildhabitrading.com',
+  emailHref: 'mailto:info@phildhabitrading.com',
   coverage: 'Dubai & Abu Dhabi, UAE',
   experienceSince: '2018',
   experienceLabel: 'Serving UAE trade since 2018',
@@ -117,7 +119,7 @@ export const seoFaqs = [
   {
     question: 'How can I request wholesale pricing?',
     answer:
-      'Send the product category, estimated quantity and delivery area through the website enquiry form or WhatsApp at +971 52 830 9091.',
+      'Send the product category, estimated quantity and delivery area through the website enquiry form, email info@phildhabitrading.com, or WhatsApp at +971 52 830 9091.',
   },
 ];
 

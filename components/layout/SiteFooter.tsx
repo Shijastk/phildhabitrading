@@ -41,11 +41,12 @@ export function SiteFooter() {
           <h2>Contact</h2>
           <span>{company.coverage}</span>
           <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
+          <a href={company.emailHref}>{company.email}</a>
         </div>
       </div>
 
       <div className="siteShell footerBottom">
-        <span>© 2026 Phildhabi General Trading. All rights reserved.</span>
+        <span>© 2018–Present Phildhabi General Trading. All rights reserved.</span>
         <span>Cosmetics · Food · FMCG · UAE</span>
       </div>
     </footer>

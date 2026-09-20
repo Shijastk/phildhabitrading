@@ -121,9 +121,11 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       height: 523,
     },
     telephone: company.phoneHref,
+    email: company.email,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: company.phoneHref,
+      email: company.email,
       contactType: 'sales',
       areaServed: 'AE',
       availableLanguage: ['English', 'Arabic'],

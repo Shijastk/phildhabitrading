@@ -34,6 +34,7 @@ export function TradeContact() {
           <div className="contactMeta">
             <span>{company.coverage}</span>
             <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
+            <a href={company.emailHref}>{company.email}</a>
           </div>
         </div>
 
